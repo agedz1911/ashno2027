@@ -171,12 +171,12 @@
                             </div>
 
                             <div class="border-t border-sky-100 bg-[#edf9fd] p-6 sm:p-7">
-                                <div class="flex items-center justify-between gap-4 flex-col md:flex-row">
+                                <div class="flex items-center justify-between gap-4 flex-col">
                                     <div class="flex min-w-0 items-center gap-4">
                                         <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}" alt="{{ $welcomeMessage->name }}" class="h-20 w-20 shrink-0 border-4 border-white object-cover shadow-md sm:h-24 sm:w-24">
                                         <div class="min-w-0">
                                             <p class="text-sm leading-5 text-[#0b7eb6]">{{ $welcomeMessage->title }}</p>
-                                            <h3 class="mt-1 text-lg font-bold leading-tight text-[#1b1464] sm:text-xl">{{ $welcomeMessage->name }}</h3>
+                                            <h3 class="mt-1 text-lg lg:text-base xl:text-lg font-bold leading-tight text-[#1b1464] sm:text-xl">{{ $welcomeMessage->name }}</h3>
                                             @if ($welcomeMessage->name2 && $welcomeMessage->title2)
                                                 <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2 }}, {{ $welcomeMessage->title2 }}</p>
                                             @endif
@@ -243,7 +243,7 @@
 
     <section class="w-full pt-24 pb-3 px-2 lg:px-4">
         <div class="text-center mb-5 pb-10">
-            <h2 class="md:text-3xl text-xl font-semibold uppercase mb-1">GET DIRECTION TO THE <span
+            <h2 class="md:text-3xl text-xl font-semibold uppercase mb-1"> THE <span
                     class="text-primary">Venue</span></h2>
         </div>
         <div class="">

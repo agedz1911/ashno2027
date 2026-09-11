@@ -125,7 +125,7 @@
     </div>
     <li>
         <a href="/sponsorship" wire:navigate
-            class="{{ request()->is('sponsorship') ? 'text-blue-700' : 'text-gray-800' }} hover:text-[#0CA6DD] hover:underline">Sponsorship
+            class="{{ request()->is('sponsorship') ? 'text-blue-700' : 'text-gray-800' }} hover:text-[#0CA6DD] hover:underline">Become a Sponsor
         </a>
     </li>
 

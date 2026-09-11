@@ -17,7 +17,7 @@
                 class="grid overflow-hidden border border-[#0ca6dd]/20 bg-white shadow-[0_18px_45px_rgba(7,90,153,0.12)] lg:grid-cols-12">
                 <div class="relative p-7 sm:p-10 lg:col-span-7 lg:p-14 {{ $loop->even ? 'lg:order-2' : '' }}">
                     <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
-                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#0b7eb6]">A message from the {{ $welcomeMessage->title }}</p>
+                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#0b7eb6]"> {{ $welcomeMessage->title }}</p>
                     <div class="h-px w-14 bg-[#0ca6dd]"></div>
                     <div
                         class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">

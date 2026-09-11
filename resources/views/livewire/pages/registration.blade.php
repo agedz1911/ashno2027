@@ -368,7 +368,7 @@
             </div>
         </div>
         <button class="btn text-error btn-link hover:text-red-700 no-underline hover:underline"
-            onclick="my_modal_1.showModal()">*DEVELOPING COUNTRIES are based on IMF List of Low Income Developing
+            onclick="my_modal_1.showModal()">*Participant from DEVELOPING COUNTRIES are based on IMF List of Low Income Developing
             Countries</button>
         <dialog id="my_modal_1" class="modal">
             <div class="modal-box w-full max-w-7xl">
@@ -397,7 +397,7 @@
         <div class=" mt-10">
             <div class="text-center lg:text-start">
                 <h2 class="mb-2 uppercase text-3xl font-semibold">Registration
-                    <span class="text-primary">information</span>
+                    <span class="text-primary">Rules & Regulations</span>
                 </h2>
             </div>
 

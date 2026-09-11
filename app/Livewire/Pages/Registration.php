@@ -77,7 +77,7 @@ class Registration extends Component
     {
         $this->regInfos = RegInfo::where('is_active', true)->orderBy('no_urut', 'asc')->get();
         $this->developingCountries = collect($this->developingCountries)->map(function ($country) {
-            return strtolower($country);
+            return ($country);
         })->toArray();
     }
 

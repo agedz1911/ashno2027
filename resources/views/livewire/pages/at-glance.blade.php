@@ -1,5 +1,5 @@
 <div>
-   
+
     <section class="relative overflow-hidden bg-[#075a99]">
         <div
             class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
@@ -10,7 +10,7 @@
         </div>
     </section>
 
-    <div class="px-5 md:px-10 pt-0 mt-10 flex flex-wrap gap-2 justify-end md:justify-center items-center">
+    <div class="px-5 md:px-10 pt-0 mt-10 flex flex-col gap-4 md:flex-row">
         <label class="input input-lg input-primary rounded-lg w-full max-w-6xl">
             <i class="fa fa-search opacity-45 text-sm"></i>
             <input wire:model.live.debounce.500ms='search' type="text" class="grow" placeholder="Search Session Title or Room" />
@@ -18,8 +18,11 @@
                 <i class="fa fa-times"></i>
             </button>
         </label>
-        <button class="btn btn-primary rounded-lg"><i
-                class="fa fa-download"></i> Download PDF Schedule</button>
+        <div class="flex flex-col items-center text-center md:text-start md:items-start">
+            <button class="btn btn-primary rounded-lg"><i
+                    class="fa fa-download"></i> Download PDF Schedule</button>
+            <span class="text-xs text-error italic">* The downloadable PDF schedule always reflects the most up-to-date information</span>
+        </div>
     </div>
 
     <section class="px-5 md:px-10 pt-0 pb-10 md:py-20 bg-competition">
