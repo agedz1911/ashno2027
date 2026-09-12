@@ -10,7 +10,7 @@
         </div>
     </section>
 
-    <div class="px-5 md:px-10 pt-0 mt-10 flex flex-col md:flex-row gap-4">
+    <div class="px-5 md:px-10 pt-0 mt-10 flex flex-col md:flex-row gap-4 justify-center">
         <label class="input input-lg input-primary rounded-lg w-full max-w-6xl">
             <i class="fa fa-search opacity-45 text-sm"></i>
             <input wire:model.live='search' type="text" class="grow" placeholder="Search Topic, Speaker, Room" />

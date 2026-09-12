@@ -46,7 +46,7 @@
                     <img src="assets/images/logo/logo-event-dark.png" class="w-full max-w-36 hidden md:block" alt="Logo" />
                     <img src="assets/images/logo/logo-event-dark.png" class="w-full max-w-36 md:hidden" alt="Logo" />
                 </div>
-                <div class="navbar-center hidden lg:flex py-2">
+                <div class="navbar-center hidden xl:flex py-2  max-w-6xl">
                     <x-section.menu />
                 </div>
                 <div class="navbar-end">
@@ -55,7 +55,7 @@
                         <i class="fa fa-image-portrait"></i>
                         Contact
                     </div>
-                    <div class="flex-none lg:hidden">
+                    <div class="flex-none xl:hidden">
                         <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
                             <i class="fa fa-bars text-2xl"></i>
                         </label>

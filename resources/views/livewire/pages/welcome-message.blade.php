@@ -1,5 +1,5 @@
 <div>
- 
+
     <section class="relative overflow-hidden bg-[#075a99]">
         <div
             class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
@@ -15,7 +15,7 @@
             @foreach ($messages as $welcomeMessage)
             <article id="welcome-message-{{ $welcomeMessage->id }}"
                 class="grid overflow-hidden border border-[#0ca6dd]/20 bg-white shadow-[0_18px_45px_rgba(7,90,153,0.12)] lg:grid-cols-12">
-                <div class="relative p-7 sm:p-10 lg:col-span-7 lg:p-14 {{ $loop->even ? 'lg:order-2' : '' }}">
+                <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14 {{ $loop->even ? 'lg:order-2' : '' }}">
                     <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
                     <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#0b7eb6]"> {{ $welcomeMessage->title }}</p>
                     <div class="h-px w-14 bg-[#0ca6dd]"></div>
@@ -26,26 +26,26 @@
                 </div>
 
                 <aside
-                    class="relative overflow-hidden bg-[#075a99] p-7 text-white sm:p-10 lg:col-span-5 lg:p-12 {{ $loop->even ? 'lg:order-1' : '' }}">
+                    class="relative overflow-hidden bg-[#075a99] text-white lg:col-span-6  {{ $loop->even ? 'lg:order-1' : '' }}">
                     <div class="absolute inset-0 bg-[linear-gradient(145deg,rgba(12,166,221,0.55),transparent_58%)]">
                     </div>
-                    <div class="relative flex h-full flex-col justify-center gap-8">
-                       
+                    <div class="relative flex h-full flex-col justify-center gap-8 ">
 
-                        <div class="flex items-center gap-5">
+                        <div class="flex flex-col text-center md:flex-row md:text-start items-center gap-5 relative z-10">
                             <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
                                 alt="{{ $welcomeMessage->name }}"
-                                class="md:h-40 md:w-40 h-24 w-24 shrink-0  border-4 border-white/20 object-cover shadow-xl sm:h-40 sm:w-40">
-                            <div class="min-w-0">
+                                class="shrink-0 max-w-xs">
+                            <div class="min-w-0 p-5">
                                 <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
                                 <h3 class="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl">{{
                                     $welcomeMessage->name }}</h3>
                             </div>
                         </div>
+                        <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/test.png') }}" alt="Background Image" class="absolute w-full bottom-0 right-0 z-0">
 
-                        @if ($welcomeMessage->name2 && $welcomeMessage->title2)
+                        {{-- @if ($welcomeMessage->name2 && $welcomeMessage->title2)
                         <div class="border-t border-white/20 pt-7">
-                            <div class="flex items-center gap-5">
+                            <div class="flex flex-col text-center md:flex-row md:text-start items-center gap-5">
                                 <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/speaker.png') }}"
                                     alt="{{ $welcomeMessage->name2 }}"
                                     class="h-24 w-24 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-28 sm:w-28">
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
+                        @endif --}}
                     </div>
                 </aside>
             </article>

@@ -1,4 +1,4 @@
-<ul class="flex gap-6 uppercase">
+<ul class="flex flex-wrap gap-6 uppercase items-center justify-center">
     <li>
         <a href="/" wire:navigate
             class="{{ request()->is('/') ? 'text-blue-700' : 'text-gray-800' }} hover:text-[#0CA6DD] hover:underline ">Home
