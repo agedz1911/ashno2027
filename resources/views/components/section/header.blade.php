@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class="bg-gradient-to-l from-[#1B1464] via-[#0c7fdd] to-[#0CA6DD] hidden lg:block text-white text-sm py-2">
+<header class="bg-gradient-to-l from-[#0E1E41] via-[#C0809A] to-[#4E6690] hidden lg:block text-white text-sm py-2">
     <div class="mx-auto flex justify-end items-center px-4 py-2">
 
         {{-- <div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="navbar-end">
                     <div onclick="contact.showModal()"
-                        class="btn btn-primary rounded-lg shadow-none mx-2 flex gap-2">
+                        class="btn bg-[#C0809A] rounded-lg shadow-none mx-2 flex gap-2">
                         <i class="fa fa-image-portrait"></i>
                         Contact
                     </div>

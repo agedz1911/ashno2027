@@ -49,7 +49,7 @@
 
     <!-- Back-to-top Button start -->
     <button onclick="topFunction()" id="back-to-top"
-        class="fixed rounded z-10 bottom-5 end-5 bg-primary border-none shadow-none text-white btn btn-sm hover:scale-105">
+        class="fixed rounded z-10 bottom-5 end-5 bg-[#C0809A] border-none shadow-none text-white btn btn-sm hover:scale-105">
         <i class="fa-solid fa-angles-up"></i>
     </button>
     <!-- Back-to-top Button end -->

@@ -4,7 +4,7 @@
             <path fill-opacity="1" d="M0,128L48,149.3C96,171,192,213,288,245.3C384,277,480,299,576,272C672,245,768,171,864,160C960,149,1056,203,1152,218.7C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
         </svg>
     </div>
-    <div class="absolute inset-0 bg-gradient-to-b from-[#1B1464] to-[#0CA6DD]/90"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0E1E41] to-[#0E1E41]/90"></div>
     <div class="relative">
         <div class="flex flex-col items-center w-full max-w-4xl m-auto">
 
