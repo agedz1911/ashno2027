@@ -173,7 +173,7 @@
                     <div class="p-0">
                         <div class="flex items-center justify-between gap-4 flex-col">
                             <div class="flex relative flex-col md:flex-row min-w-0 items-center gap-4">
-                                <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/test.png') }}" alt="Background Image" class="absolute w-full bottom-0 right-0 z-0">
+                                
                                 <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}" alt="{{ $welcomeMessage->name }}" class="z-10">
                                 <div class="min-w-0 p-6 sm:p-7 z-10">
                                     <p class="text-sm leading-5 text-white">{{ $welcomeMessage->title }}</p>
