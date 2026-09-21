@@ -1,8 +1,8 @@
 <div>
 
-    <section class="relative overflow-hidden bg-[#075a99]">
+   <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Program at a Glance</h2>
@@ -11,7 +11,7 @@
     </section>
 
     <div class="px-5 md:px-10 pt-0 mt-10 flex flex-col gap-4 md:flex-row justify-center">
-        <label class="input input-lg input-primary rounded-lg w-full max-w-6xl">
+        <label class="input input-lg input-warning rounded-lg w-full max-w-6xl">
             <i class="fa fa-search opacity-45 text-sm"></i>
             <input wire:model.live.debounce.500ms='search' type="text" class="grow" placeholder="Search Session Title or Room" />
             <button type="button" wire:click="resetSearch" class="btn btn-ghost btn-sm" aria-label="Reset search" title="Reset search">
@@ -19,7 +19,7 @@
             </button>
         </label>
         <div class="flex flex-col items-center text-center md:text-start md:items-start">
-            <button class="btn btn-primary rounded-lg"><i
+            <button class="btn bg-[#C0809A] hover:bg-[#4E6690] hover:text-white rounded-lg"><i
                     class="fa fa-download"></i> Download PDF Schedule</button>
             <span class="text-xs text-error italic">* The downloadable PDF schedule always reflects the most up-to-date information</span>
         </div>
@@ -32,25 +32,25 @@
                 <div class="">
                     <div class="mb-4 flex flex-wrap space-x-4 p-2 bg-white rounded-lg shadow-md">
 
-                        <button x-on:click="openTab = 1" :class="{ 'bg-[#1B1464] text-white': openTab === 1 }"
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">16
-                            November</button>
-                        <button x-on:click="openTab = 2" :class="{ 'bg-[#1B1464] text-white': openTab === 2 }"
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">17
-                            November</button>
-                        <button x-on:click="openTab = 3" :class="{ 'bg-[#1B1464] text-white': openTab === 3 }"
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">18
-                            November</button>
-                        <button x-on:click="openTab = 4" :class="{ 'bg-[#1B1464] text-white': openTab === 4 }"
-                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">19
-                            November</button>
-                        <button x-on:click="openTab = 5" :class="{ 'bg-[#1B1464] text-white': openTab === 5 }"
+                        <button x-on:click="openTab = 1" :class="{ 'bg-[#C0809A] text-white': openTab === 1 }"
+                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">5
+                            August</button>
+                        <button x-on:click="openTab = 2" :class="{ 'bg-[#C0809A] text-white': openTab === 2 }"
+                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">6
+                            August</button>
+                        <button x-on:click="openTab = 3" :class="{ 'bg-[#C0809A] text-white': openTab === 3 }"
+                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">7
+                            August</button>
+                        <button x-on:click="openTab = 4" :class="{ 'bg-[#C0809A] text-white': openTab === 4 }"
+                            class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">8
+                            August</button>
+                        {{-- <button x-on:click="openTab = 5" :class="{ 'bg-[#C0809A] text-white': openTab === 5 }"
                             class="flex-1 py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue transition-all duration-300">20
-                            November</button>
+                            August</button> --}}
                     </div>
 
                     <div x-show="openTab === 1"
-                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#262262]">
+                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#C0809A]">
                         <div class="overflow-x-auto">
                             <table class="table">
                                 <thead>
@@ -141,7 +141,7 @@
                     </div>
 
                     <div x-show="openTab === 2"
-                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#262262]">
+                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#C0809A]">
 
                         <div class="overflow-x-auto">
                             <table class="table">
@@ -232,7 +232,7 @@
                     </div>
 
                     <div x-show="openTab === 3"
-                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#262262]">
+                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#C0809A]">
 
                         <div class="overflow-x-auto">
                             <table class="table">
@@ -322,7 +322,7 @@
 
                     </div>
                     <div x-show="openTab === 4"
-                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#262262]">
+                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#C0809A]">
 
                         <div class="overflow-x-auto">
                             <table class="table">
@@ -414,7 +414,7 @@
 
                     </div>
                     <div x-show="openTab === 5"
-                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#262262]">
+                        class="transition-all duration-300 bg-white p-4 rounded-lg shadow-md border-x-4 border-[#C0809A]">
 
                         <div class="overflow-x-auto">
                             <table class="table">
@@ -509,7 +509,7 @@
 
         </div>
         <div class="px-4 md:px-10 mt-10">
-            <p class="text-sm text-primary italic">
+            <p class="text-sm text-gray-500 italic">
                 Note: <br>
                 The scientific schedule is provisional and may be adjusted as required.
             </p>

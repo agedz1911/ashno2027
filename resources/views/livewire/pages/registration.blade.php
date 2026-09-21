@@ -1,8 +1,8 @@
 <div>
     
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Registration</h2>
@@ -15,13 +15,13 @@
         <div class="tabs tabs-border justify-evenly">
 
 
-            <input type="radio" name="my_tabs_2" class="tab uppercase text-lg text-primary "
+            <input type="radio" name="my_tabs_2" class="tab uppercase text-lg text-[#C0809A]"
                 aria-label="Foreign Participant" checked="checked" />
             <div class="tab-content">
                 <div class="pb-6 text-gray-500">
                     @foreach ($uniqueForeigns as $category)
                     @if ($category == 'symposium')
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                             <thead class=" text-white uppercase text-center bg-primary ">
@@ -79,7 +79,7 @@
                     </div>
 
                     @elseif ($category == 'workshop')
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                             <thead class=" text-white uppercase text-center bg-primary ">
@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     @elseif ($category == 'workshop microsurgery')
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                             <thead class=" text-white uppercase text-center bg-primary ">
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                     @else
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                             <thead class=" text-white uppercase text-center bg-primary ">
@@ -228,13 +228,13 @@
                 </div>
 
             </div>
-            <input type="radio" name="my_tabs_2" class="tab text-lg uppercase text-primary"
+            <input type="radio" name="my_tabs_2" class="tab text-lg uppercase text-[#C0809A]"
                 aria-label="Indonesian Participant" />
             <div class="tab-content">
                 <div class="pb-6 text-gray-500">
                     @foreach ($uniqueLocals as $category)
                     @if ($category == 'symposium')
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                             <thead class=" text-white uppercase text-center bg-primary ">
@@ -288,7 +288,7 @@
                         </div>
                     </div>
                     @elseif ($category == 'workshop')
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
                         @foreach ($regLocals as $regLocal)
                         @if ($regLocal->category_reg == $category)
@@ -313,7 +313,7 @@
                         @endforeach
                     </div>
                     @else
-                    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+                    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
                             <thead class=" text-white uppercase text-center bg-primary ">
@@ -367,37 +367,14 @@
                 </div>
             </div>
         </div>
-        <button class="btn text-error btn-link hover:text-red-700 no-underline hover:underline"
-            onclick="my_modal_1.showModal()">*Participant from DEVELOPING COUNTRIES are based on IMF List of Low Income Developing
-            Countries</button>
-        <dialog id="my_modal_1" class="modal">
-            <div class="modal-box w-full max-w-7xl">
-                <h3 class="text-xl font-bold text-primary">Developing Countries</h3>
-                <p class="mt-1 text-sm text-gray-500">Based on IMF list of low income developing countries.</p>
-
-                <div class="mt-4 rounded-xl border border-gray-200 bg-base-100 p-4">
-                    <ol class="list-decimal pl-5 text-sm text-gray-700 columns-1 gap-8 md:columns-2 lg:columns-3">
-                        @foreach ($developingCountries as $country)
-                        <li class="mb-2 break-inside-avoid">{{ $country }}</li>
-                        @endforeach
-                    </ol>
-                </div>
-
-                <div class="modal-action">
-                    <form method="dialog">
-                        <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn">Close</button>
-                    </form>
-                </div>
-            </div>
-        </dialog>
+        
     </section>
 
     <section class="px-5 md:px-10 py-10 md:py-20 bg-competition border-t border-dashed border-gray-400">
         <div class=" mt-10">
             <div class="text-center lg:text-start">
                 <h2 class="mb-2 uppercase text-3xl font-semibold">Registration
-                    <span class="text-primary">Rules & Regulations</span>
+                    <span class="text-[#C0809A]">Rules & Regulations</span>
                 </h2>
             </div>
 
@@ -419,7 +396,7 @@
 {{-- <div class="pb-6 text-gray-500">
     @foreach ($uniqueLocals as $category)
     @if ($category == 'symposium')
-    <h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+    <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
 <div class="relative overflow-x-auto shadow sm:rounded-lg ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
         <thead class=" text-white uppercase text-center bg-primary ">
@@ -473,7 +450,7 @@
     </div>
 </div>
 @elseif ($category == 'workshop')
-<h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+<h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
     @foreach ($regLocals as $regLocal)
     @if ($regLocal->category_reg == $category)
@@ -498,7 +475,7 @@
     @endforeach
 </div>
 @else
-<h2 class="uppercase font-semibold text-primary mb-2 mt-5">{{$category}}</h2>
+<h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
 <div class="relative overflow-x-auto shadow sm:rounded-lg ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
         <thead class=" text-white uppercase text-center bg-primary ">

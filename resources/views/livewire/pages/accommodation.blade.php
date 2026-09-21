@@ -1,8 +1,8 @@
 <div>
     
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Accommodation</h2>
@@ -12,8 +12,8 @@
 
     <section class="px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="text-center md:text-start mb-5">
-            <h2 class="mb-3 uppercase text-4xl tracking-wide font-bold">Hotel <span class="text-sky-500">Reservation</span></h2>
-            <p class="text-gray-500">The organizers of the WFNS 2027 Congress have secured competitive rates at a variety of
+            <h2 class="mb-3 uppercase text-4xl tracking-wide font-bold">Hotel <span class="text-[#C0809A]">Reservation</span></h2>
+            <p class="text-gray-500">The organizers of the ASHNO 2027 Congress have secured competitive rates at a variety of
                 hotels near the Venue to accommodate delegates
                 with different budgets and preferences. Hotel reservations will open and are subject
                 to availability. It is advisable to book your preferred hotel as soon as possible

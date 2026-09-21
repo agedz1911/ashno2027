@@ -1,8 +1,8 @@
 <div>
 
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Become a Sponsor</h2>
@@ -11,12 +11,12 @@
     </section>
 
     <section class="mx-auto w-full px-5 md:px-10 pt-0 pb-10 md:py-20 ">
-        <div class="mb-5 text-justify text-gray-900 ">
+        {{-- <div class="mb-5 text-justify text-gray-900 ">
             <p>As we prepare to make history with the WFNS 2027; the first-ever WFNS world congress hosted in the ASEAN region - your organization has an unprecedented opportunity to position itself at the forefront of global neurosurgical innovation.
                 Partnering with us allows you to connect directly with international key opinion leaders, showcase cutting-edge medical technologies, and expand your brand footprint across a rapidly growing healthcare market.
                 To secure your place among our core corporate partners and receive the comprehensive sponsorship proposal, please contact the Congress Secretariat via email at <a class="text-primary hover:text-indigo-600 hover:underline" href="mailto:inasponsor@wfns2027bali.org">inasponsor@wfns2027bali.org</a> (for local partners) or <a class="text-primary hover:text-indigo-600 hover:underline" href="mailto:intsponsor@wfns2027bali.org">intsponsor@wfns2027bali.org</a> (for international partners).
             </p>
-        </div>
+        </div> --}}
         <div class="my-5 ">
             <h1 class="text-lg font-bold mb-2">Force Majeure, Event Modifications, and Sponsor Property Liability</h1>
             <p class="text-gray-900 text-justify">The organizing committee shall not be held liable for any financial losses, unfulfilled promotional exposure, or operational disruptions resulting from a force majeure event—including natural disasters, facility failure, or man-made emergencies - occurring prior to, during, or after the event.</p>

@@ -10,7 +10,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 
-#[Title('WFNS 2027 - One world, one neurosurgery, The Bali Renaissance')]
+#[Title('ASHNO 2027 - Sea to Summit: Innovating, Bridging Gaps & Driving Change')]
 class HomePage extends Component
 {
     public function render()

@@ -1,8 +1,8 @@
 <div>
 
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Welcome Message</h2>
@@ -13,8 +13,8 @@
     <section class="pattern relative overflow-hidden py-16 sm:py-20 lg:py-28">
         <div class="mx-auto flex max-w-7xl flex-col gap-12 px-5 sm:px-8 lg:gap-20 lg:px-12">
             @foreach ($messages as $welcomeMessage)
-            <div id="welcome-message-{{ $welcomeMessage->id }}"
-                class="border border-[#0ca6dd]/20 bg-[#075a99] shadow-[0_18px_45px_rgba(3, 40, 69, 0.12)] rounded-md">
+            {{-- <div id="welcome-message-{{ $welcomeMessage->id }}"
+                class="border border-[#C0809A]/20 bg-[#075a99] shadow-[0_18px_45px_rgba(3, 40, 69, 0.12)] rounded-md">
                 <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14">
                     <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
                     <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-white"> {{ $welcomeMessage->title
@@ -36,14 +36,14 @@
                             $welcomeMessage->name }}</h3>
                     </div>
                 </div>
-            </div>
-            {{-- <article id="welcome-message-{{ $welcomeMessage->id }}"
-                class="grid overflow-hidden border border-[#0ca6dd]/20 bg-white shadow-[0_18px_45px_rgba(7,90,153,0.12)] lg:grid-cols-12">
+            </div> --}}
+            <article id="welcome-message-{{ $welcomeMessage->id }}"
+                class="grid overflow-hidden border border-[#C0809A]/20 bg-white shadow-[0_18px_45px_rgba(7,90,153,0.12)] lg:grid-cols-12">
                 <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14 {{ $loop->even ? 'lg:order-2' : '' }}">
-                    <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
-                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#0b7eb6]"> {{
+                    <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#4e6690] lg:block"></div>
+                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#C0809A]"> {{
                         $welcomeMessage->title }}</p>
-                    <div class="h-px w-14 bg-[#0ca6dd]"></div>
+                    <div class="h-px w-14 bg-[#C0809A]"></div>
                     <div
                         class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
                         {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
@@ -52,27 +52,25 @@
                 </div>
 
                 <aside
-                    class="relative overflow-hidden bg-[#075a99] text-white lg:col-span-6  {{ $loop->even ? 'lg:order-1' : '' }}">
-                    <div class="absolute inset-0 bg-[linear-gradient(145deg,rgba(12,166,221,0.55),transparent_58%)]">
+                    class="relative overflow-hidden bg-[#4e6690] p-7 text-white sm:p-10 lg:col-span-6 lg:p-12 {{ $loop->even ? 'lg:order-1' : '' }}">
+                    <div class="absolute inset-0 bg-[linear-gradient(145deg,rgba(192,128,154,0.55),transparent_58%)]">
                     </div>
-                    <div class="relative flex h-full flex-col justify-center gap-8 ">
+                    <div class="relative flex h-full flex-col justify-center gap-8">
 
-                        <div
-                            class="flex flex-col text-center md:flex-row md:text-start items-center gap-5 relative z-10">
+                        <div class="flex flex-col items-center gap-5">
                             <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
-                                alt="{{ $welcomeMessage->name }}" class="shrink-0 max-w-xs">
-                            <div class="min-w-0 p-5">
-                                <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
-                                <h3 class="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl">{{
+                                alt="{{ $welcomeMessage->name }}"
+                                class="md:h-52 md:w-52 h-24 w-24 shrink-0  border-4 border-white/20 object-cover shadow-xl sm:h-40 sm:w-40">
+                            <div class="min-w-0">
+                                <p class="text-sm text-center md:text-start leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
+                                <h3 class="mt-2 text-xl font-bold leading-tight text-center md:text-start text-white sm:text-2xl">{{
                                     $welcomeMessage->name }}</h3>
                             </div>
                         </div>
-                        <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/test.png') }}"
-                            alt="Background Image" class="absolute w-full bottom-0 right-0 z-0">
 
                         @if ($welcomeMessage->name2 && $welcomeMessage->title2)
                         <div class="border-t border-white/20 pt-7">
-                            <div class="flex flex-col text-center md:flex-row md:text-start items-center gap-5">
+                            <div class="flex items-center gap-5">
                                 <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/speaker.png') }}"
                                     alt="{{ $welcomeMessage->name2 }}"
                                     class="h-24 w-24 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-28 sm:w-28">
@@ -86,7 +84,7 @@
                         @endif
                     </div>
                 </aside>
-            </article> --}}
+            </article>
             @endforeach
         </div>
     </section>

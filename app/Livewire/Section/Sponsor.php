@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 
-#[Title('Sponsorship - WFNS 2027')]
+#[Title('Sponsorship - ASHNO 2027')]
 class Sponsor extends Component
 {
     public function render()

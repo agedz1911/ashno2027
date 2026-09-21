@@ -1,8 +1,8 @@
 <div wire:init="loadFaculties">
     
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Faculties</h2>
@@ -13,7 +13,7 @@
     <section class="mx-auto w-full px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="">
             <div class="w-full px-3">
-                <label class="input input-primary rounded-xl input-lg w-full">
+                <label class="input input-warning rounded-xl input-lg w-full">
                     <i class="fa-solid fa-search h-[1em] opacity-50"></i>
                     <input wire:model.live.debounce.500ms="searchTerm" type="text" class="w-full" required
                         placeholder="Search Faculties.." />
@@ -23,7 +23,7 @@
                 <!-- name of each tab group should be unique -->
                 <div class="tabs tabs-border justify-evenly mb-5">
                     <input type="radio" name="my_tabs_2"
-                        class="tab uppercase tracking-wider text-lg hover:text-sky-500 text-primary"
+                        class="tab uppercase tracking-wider text-lg hover:text-amber-500 text-[#C0809A]"
                         aria-label="Indonesian Faculties" checked="checked" />
                     <div class="tab-content  p-5 rounded-lg">
                         @if (!$readyToLoad)
@@ -42,7 +42,7 @@
 
                             @foreach ($indofaculties as $indo)
                             <div
-                                class="card bg-sky-50 shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
+                                class="card bg-amber-50 shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
                                 
                                 <figure onclick="my_modal_{{$loop->index}}.showModal()"
                                     class="relative hover:cursor-pointer ">
@@ -113,7 +113,7 @@
                     </div>
 
                     <input type="radio" name="my_tabs_2"
-                        class="tab uppercase tracking-wider  text-lg hover:text-sky-500 text-primary"
+                        class="tab uppercase tracking-wider  text-lg hover:text-amber-500 text-[#C0809A]"
                         aria-label="International faculties"  />
                     <div class="tab-content  p-5 rounded-lg">
                         

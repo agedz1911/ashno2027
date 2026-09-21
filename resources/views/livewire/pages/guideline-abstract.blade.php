@@ -1,8 +1,8 @@
 <div>
     
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Abstract Submission</h2>
@@ -12,20 +12,20 @@
 
     <section class="bg-base-100 px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="text-center lg:text-start mb-5 md:mb-10">
-            <p class="mb-1 text-primary">Submission</p>
-            <h2 class="mb-2 uppercase text-3xl font-semibold">Guideline for <span class="text-primary">Abstract
+            <p class="mb-1 text-[#C0809A]">Submission</p>
+            <h2 class="mb-2 uppercase text-3xl font-semibold">Guideline for <span class="text-[#C0809A]">Abstract
                     Submission</span>
             </h2>
             {{-- <p>Abstract Free Paper</p> --}}
         </div>
         <div class="flex flex-col md:flex-row justify-between gap-5 md:gap-0">
             <div class="order-2 w-full max-w-md">
-                <div class="card bg-sky-50 w-full shadow-sm rounded-lg">
+                <div class="card bg-slate-50 w-full shadow-sm rounded-lg">
                     <div class="card-body">
-                        <h2 class="card-title">Online <span class="text-primary">Submission</span></h2>
+                        <h2 class="card-title">Online <span class="text-[#C0809A]">Submission</span></h2>
                         <p class="text-gray-600 italic">*make sure the file complies with the guidelines.</p>
                         <div class="card-actions justify-end mt-5">
-                            <button class="btn btn-primary"><i class="fa-solid fa-upload me-1"></i> Submit Abstract</button>
+                            <button class="btn bg-[#C0809A] hover:bg-[#4E6690] hover:text-white"><i class="fa-solid fa-upload me-1"></i> Submit Abstract</button>
                         </div>
                     </div>
                 </div>

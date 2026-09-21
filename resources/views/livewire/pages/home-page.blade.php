@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-7 w-full gap-1 flex flex-wrap justify-center md:justify-start">
                     <a class="btn bg-[#C0809A] hover:bg-[#5f3e4b] hover:text-white rounded-xl"><i
                             class="fa-solid fa-file-download mr-1 text-xs"></i>Download
@@ -93,7 +93,7 @@
         </div>
     </section>
 
-    <section class="bg-gradient-to-t via-[#4E6690] from-[#0E1E41] to-[#fff] relative z-0 py-28">
+    <section class="bg-gradient-to-t via-[#F6E9E3] from-[#0E1E41] to-[#fff] relative z-0 py-28">
         <div class="relative">
 
             <div class="mx-auto w-full px-5 sm:px-8 lg:px-12">
@@ -103,30 +103,28 @@
                     <div class="mx-auto h-1 w-16 bg-[#C0809A]"></div>
                 </div>
 
-                <div class="grid gap-2 lg:grid-cols-3">
+                <div class="gap-2 w-full max-w-6xl mx-auto">
                     @foreach ($welcomeMessages as $welcomeMessage)
                     <article
-                        class="flex h-full flex-col overflow-hidden border border-white/20 bg-[#075a99] rounded-md shadow-[0_18px_45px_rgba(11,20,90,0.2)]">
+                        class="flex h-full flex-col overflow-hidden border border-white/20 bg-white rounded-md shadow-[0_18px_45px_rgba(11,20,90,0.2)]">
                         <div class="flex-1 p-7 sm:p-9">
-                            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white">{{
-                                $welcomeMessage->title }}</p>
-                            <div class="h-px w-12 bg-[#0ca6dd]"></div>
-                            <div class="mt-6 text-justify text-sm sm:text-base leading-7 text-slate-200">
+                            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{ $welcomeMessage->title }}</p>
+                            <div class="h-px w-12 bg-[#C0809A]"></div>
+                            <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base">
                                 {!! Str::limit(str($welcomeMessage->description)->markdown()->sanitizeHtml(), 450) !!}
                             </div>
                         </div>
 
-                        <div class="p-0">
-                            <div class="flex items-center justify-between gap-4 flex-col">
-                                <div class="flex relative flex-col md:flex-row min-w-0 items-center gap-4">
-
+                        <div class="border-t border-sky-100 bg-[#f4eff7] p-6 sm:p-7">
+                            <div class="flex items-center justify-between gap-4 flex-col md:flex-row">
+                                <div class="flex min-w-0 items-center gap-4">
                                     <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
-                                        alt="{{ $welcomeMessage->name }}" class="z-10">
-                                    <div class="min-w-0 p-6 sm:p-7 z-10">
-                                        <p class="text-sm leading-5 text-white">{{ $welcomeMessage->title }}</p>
-                                        <h3
-                                            class="mt-1 text-lg lg:text-base xl:text-lg font-bold leading-tight text-white sm:text-xl">
-                                            {{ $welcomeMessage->name }}</h3>
+                                        alt="{{ $welcomeMessage->name }}"
+                                        class="h-20 w-20 shrink-0 border-4 border-white object-cover shadow-md sm:h-24 sm:w-24">
+                                    <div class="min-w-0">
+                                        <p class="text-sm leading-5">{{ $welcomeMessage->title }}</p>
+                                        <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A] sm:text-xl">{{
+                                            $welcomeMessage->name }}</h3>
                                         @if ($welcomeMessage->name2 && $welcomeMessage->title2)
                                         <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2 }},
                                             {{ $welcomeMessage->title2 }}</p>
@@ -134,7 +132,8 @@
                                     </div>
                                 </div>
                                 <a href="{{ route('welcome-message') }}#welcome-message-{{ $welcomeMessage->id }}"
-                                    class="btn btn-outline btn-primary mb-5 text-white">Read more</a>
+                                    class="shrink-0 border border-[#C0809A] px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#C0809A] transition hover:bg-[#C0809A] hover:text-white">Read
+                                    more</a>
                             </div>
                         </div>
                     </article>
@@ -147,7 +146,7 @@
                         <div class="w-full border-e border-opacity-35 border-white ">
                             <div class="border-b border-opacity-25 border-white md:border-b-0 text-center py-5 px-2">
                                 <h1 class="text-white m-0 text-4xl md:text-5xl font-semibold"><span class="num"
-                                        data-val="200"></span><span>+</span>
+                                        data-val="100"></span><span>+</span>
                                 </h1>
                                 <p class="text-xs text-white">Speakers</p>
                             </div>
@@ -155,7 +154,7 @@
                         <div class="w-full border-e border-opacity-35 border-white">
                             <div class="border-b border-opacity-25 border-white md:border-b-0 text-center py-5 px-2">
                                 <h1 class="text-white m-0 text-4xl md:text-5xl font-semibold"><span class="num"
-                                        data-val="5"></span><span>+</span>
+                                        data-val="4"></span><span>+</span>
                                 </h1>
                                 <p class="text-xs text-white">Pre & Congress Days</p>
                             </div>
@@ -163,7 +162,7 @@
                         <div class="w-full border-e border-opacity-35 border-white">
                             <div class="border-b border-opacity-25 border-white md:border-b-0 text-center py-5 px-2">
                                 <h1 class="text-white m-0 text-4xl md:text-5xl font-semibold"><span class="num"
-                                        data-val="10"></span><span>+</span>
+                                        data-val="5"></span><span>+</span>
                                 </h1>
                                 <p class="text-xs text-white">Parallel Session Room </p>
                             </div>
@@ -171,9 +170,9 @@
                         <div class="w-full border-e border-opacity-35 border-white">
                             <div class="border-b border-opacity-25 border-white md:border-b-0 text-center py-5 px-2">
                                 <h1 class="text-white m-0 text-4xl md:text-5xl font-semibold"><span class="num"
-                                        data-val="3000"></span><span>+</span>
+                                        data-val="50"></span><span>+</span>
                                 </h1>
-                                <p class="text-xs text-white">Expected Attendance</p>
+                                <p class="text-xs text-white">Topics</p>
                             </div>
                         </div>
                     </div>
@@ -185,8 +184,8 @@
     <section class="lg:py-16 py-20  relative z-0 bg-competition">
         <div class="w-full pt-5">
             <div class="text-center pb-6 m-auto">
-                <h2 class="mb-5 md:mb-8 text-3xl font-bold uppercase ">Dates to <span
-                        class="text-primary">Remember</span></h2>
+                <h2 class="mb-5 md:mb-8 text-3xl font-bold uppercase ">Important <span
+                        class="text-[#C0809A]">Dates</span></h2>
             </div>
             <livewire:section.important-date />
         </div>
@@ -197,50 +196,52 @@
 
     <section class="w-full pt-24 pb-3 px-2 lg:px-4">
         <div class="text-center mb-5 pb-10">
-            <h2 class="md:text-3xl text-xl font-semibold uppercase mb-1"> THE <span class="text-primary">Venue</span>
+            <h2 class="md:text-3xl text-xl font-semibold uppercase mb-1"> THE <span class="text-[#C0809A]">Venue</span>
             </h2>
         </div>
         <div class="">
             <div class="flex flex-col lg:flex-row gap-5">
                 <div class="lg:w-1/3 w-fit">
                     <div
-                        class="py-10  px-4 text-white rounded-lg shadow-md bg-gradient-to-tl from-[#0CA6DD] to-[#1B1464]">
+                        class="py-10  px-4 text-white rounded-lg shadow-md bg-gradient-to-tl from-[#0E1E41] to-[#C0809A]">
                         <div class="">
                             <h5 class="pb-2 tracking-wide font-semibold">EVENT VENUE :
                             </h5>
-                            <p class="pb-5 m-0 text-sm"> Bali Nusa Dua Convention Center </p>
+                            <p class="pb-5 m-0 text-sm"> The Westin Surabaya </p>
                             <h5 class="pb-2 tracking-wide font-semibold">ADDRESS :
                             </h5>
-                            <p class="pb-5 m-0 text-sm"> Nusa Dua Lot, Jl. Nusa Dua NW/1, Benoa,
-                                South Kuta, Kabupaten Badung, Bali 80361
+                            <p class="pb-5 m-0 text-sm"> Kompleks Pakuwon Mall, Jl. Raya Lontar No.2, Sambikerep,
+                                Surabaya. East Java 60286
                             </p>
 
-                            <a href="https://maps.app.goo.gl/6Qg2DCTgMUtXKKkS6" target="_blank"
-                                class="hover:text-sky-500">Get Directions</a>
+                            <a href="https://maps.app.goo.gl/VkM6MvvnAAv8auPz7" target="_blank"
+                                class="hover:text-[#C0809A]">Get Directions</a>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-2/3 w-full px-1 flex flex-col md:flex-row gap-2">
                     <iframe class="rounded-lg w-full "
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.901220328931!2d115.22591027501619!3d-8.795350491256988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2432481681435%3A0x28d2de6bdbd07735!2sBali%20Nusa%20Dua%20Convention%20Center!5e0!3m2!1sen!2sid!4v1786434899650!5m2!1sen!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5736780871334!2d112.673361475!3d-7.2892487927181655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fc498f1cffc5%3A0xc0718e958df80ba0!2sThe%20Westin%20Surabaya!5e0!3m2!1sen!2sid!4v1790000755917!5m2!1sen!2sid"
                         width="600" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-5 justify-items-center">
 
                 <div class="w-full ">
-                    <a><img src="{{asset('assets/images/bali/1.jpg')}}"
-                            class="w-full max-h-96 object-cover rounded-xl shadow-md" alt="venue bali "></a>
+                    <a><img src="{{asset('assets/images/surabaya/2.jpg')}}"
+                            class="w-full max-h-96 object-cover rounded-xl shadow-md" alt="venue surabaya "></a>
                 </div>
                 <div class="w-full ">
-                    <a><img src="{{asset('assets/images/bali/2.jpg')}}"
-                            class="w-full max-h-96 object-cover rounded-xl shadow-md" alt="venue bali "></a>
+                    <a><img src="{{asset('assets/images/surabaya/3.jpg')}}"
+                            class="w-full max-h-96 h-full object-cover rounded-xl shadow-md" alt="venue surabaya "></a>
                 </div>
                 <div class="w-full ">
-                    <a><img src="{{asset('assets/images/bali/3.jpg')}}"
-                            class="w-full max-h-96 object-cover object-top rounded-xl shadow-md" alt="venue bali "></a>
+                    <a><img src="{{asset('assets/images/surabaya/1.jpg')}}"
+                            class="w-full max-h-96 h-full object-cover object-top rounded-xl shadow-md"
+                            alt="venue surabaya "></a>
                 </div>
             </div>
         </div>

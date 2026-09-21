@@ -5,7 +5,7 @@ namespace App\Livewire\Pages;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Visiting - WFNS 2027')]
+#[Title('Visiting - ASHNO 2027')]
 class Visiting extends Component
 {
     public $currentSlide = 1;

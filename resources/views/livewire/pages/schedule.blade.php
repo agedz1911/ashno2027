@@ -1,8 +1,8 @@
 <div>
 
-    <section class="relative overflow-hidden bg-[#075a99]">
+    <section class="relative overflow-hidden bg-[#C0809A]">
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
         </div>
         <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">Scientific Schedule</h2>
@@ -11,12 +11,12 @@
     </section>
 
     <div class="px-5 md:px-10 pt-0 mt-10 flex flex-col md:flex-row gap-4 justify-center">
-        <label class="input input-lg input-primary rounded-lg w-full max-w-6xl">
+        <label class="input input-lg input-warning rounded-lg w-full max-w-6xl">
             <i class="fa fa-search opacity-45 text-sm"></i>
             <input wire:model.live='search' type="text" class="grow" placeholder="Search Topic, Speaker, Room" />
         </label>
         <div class="flex flex-col items-center text-center md:text-start md:items-start">
-            <button class="btn btn-primary rounded-lg"><i
+            <button class="btn bg-[#C0809A] hover:bg-[#4E6690] hover:text-white  rounded-lg"><i
                     class="fa fa-download"></i> Download PDF Schedule</button>
             <span class="text-xs text-error italic">* The downloadable PDF schedule always reflects the most up-to-date information</span>
         </div>

@@ -6,26 +6,6 @@
     </li>
     <div class="dropdown dropdown-hover">
         <div tabindex="0"
-            class="{{  request()->is('about-ins') || request()->is('about-wfns') || request()->is('wfns-congress-2027') ? 'text-[#C0809A]' : 'text-gray-800' }} hover:cursor-pointer hover:text-fuchsia-800">
-            About <i class="fa-solid fa-angle-down"></i></div>
-        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box gap-2 w-60 p-2 shadow-sm">
-            <li>
-                <a href="{{route('wfns-congress-2027')}}" wire:navigate
-                    class="{{ request()->is('wfns-congress-2027') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800 "> WFNS Congress 2027 <i class="fa-solid fa-angle-right"></i></a>
-            </li>
-            <li>
-                <a href="{{route('about-wfns')}}" wire:navigate
-                    class="{{ request()->is('about-wfns') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800 "> WFNS <i class="fa-solid fa-angle-right"></i></a>
-            </li>
-            <li>
-                <a href="{{route('about-ins')}}" wire:navigate
-                    class="{{ request()->is('about-ins') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800 "> INS <i class="fa-solid fa-angle-right"></i></a>
-            </li>
-
-        </ul>
-    </div>
-    <div class="dropdown dropdown-hover">
-        <div tabindex="0"
             class="{{ request()->is('organizing-committee') || request()->is('faculties') || request()->is('welcome-message')  ? 'text-[#C0809A]' : 'text-gray-800' }} hover:cursor-pointer hover:text-fuchsia-800">
             Congress Information <i class="fa-solid fa-angle-down"></i></div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box gap-2 w-60 p-2 shadow-sm">
@@ -37,7 +17,7 @@
 
             <li>
                 <a href="/organizing-committee" wire:navigate
-                    class="{{ request()->is('organizing-committee') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800 ">Local Organizing
+                    class="{{ request()->is('organizing-committee') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800 "> Organizing
                     Committee <i class="fa-solid fa-angle-right"></i></a>
             </li>
             <li>
@@ -102,7 +82,7 @@
                     Submission<i class="fa-solid fa-angle-right"></i></a>
             </li>
     </div>
-    <div class="dropdown dropdown-hover">
+    {{-- <div class="dropdown dropdown-hover">
         <div tabindex="0"
             class="{{ request()->is('visiting')  || request()->is('social-program')  ? 'text-[#C0809A]' : 'text-gray-800' }} hover:cursor-pointer hover:text-fuchsia-800">
             Visiting <i class="fa-solid fa-angle-down"></i></div>
@@ -117,12 +97,12 @@
                     class="{{ request()->is('visiting#venue') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">Conference
                     Venue <i class="fa-solid fa-angle-right"></i></a>
             </li>
-            {{-- <li>
+             <li>
                 <a href="/social-program" wire:navigate
                     class="{{ request()->is('social-program') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">Social
             Program <i class="fa-solid fa-angle-right"></i></a>
-            </li> --}}
-    </div>
+            </li> 
+    </div>--}}
     <li>
         <a href="/sponsorship" wire:navigate
             class="{{ request()->is('sponsorship') ? 'text-[#C0809A]' : 'text-gray-800' }} hover:text-fuchsia-800 hover:underline">Become a Sponsor

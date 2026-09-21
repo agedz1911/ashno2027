@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 
-#[Title('Submission - WFNS 2027')]
+#[Title('Submission - ASHNO 2027')]
 class GuidelineAbstract extends Component
 {
     public function render()

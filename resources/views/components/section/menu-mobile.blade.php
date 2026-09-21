@@ -5,21 +5,7 @@
                 class="{{ request()->is('/') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Home
                 <i class="fa-solid fa-angle-right"></i></a>
         </li>
-        <li>
-            <a href="{{route('wfns-congress-2027')}}" wire:navigate
-                class="{{ request()->is('wfns-congress-2027') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">WFNS Congress 2027
-                <i class="fa-solid fa-angle-right"></i></a>
-        </li>
-        <li>
-            <a href="{{route('about-wfns')}}" wire:navigate
-                class="{{ request()->is('about-wfns') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">About WFNS
-                <i class="fa-solid fa-angle-right"></i></a>
-        </li>
-        <li>
-            <a href="{{route('about-ins')}}" wire:navigate
-                class="{{ request()->is('about-ins') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">About INS
-                <i class="fa-solid fa-angle-right"></i></a>
-        </li> 
+
         <li>
             <a href="/welcome-message" wire:navigate
                 class="{{ request()->is('welcome-message') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Welcome Message
@@ -27,7 +13,7 @@
         </li>
         <li>
             <a href="/organizing-committee" wire:navigate
-                class="{{ request()->is('organizing-committee') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Local Organizing
+                class="{{ request()->is('organizing-committee') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Organizing
                 Committee <i class="fa-solid fa-angle-right"></i></a>
         </li>
         <li>
@@ -76,16 +62,17 @@
                 <i class="fa-solid fa-angle-right"></i></a>
         </li>
         <li>
-            <a href="/visiting" wire:navigate
-                class="{{ request()->is('visiting') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Visiting
-                <i class="fa-solid fa-angle-right"></i></a>
-        </li>
-        <li>
             <a href="/sponsorship" wire:navigate
                 class="{{ request()->is('sponsorship') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Become a Sponsor
-        <i class="fa-solid fa-angle-right"></i></a>
+                <i class="fa-solid fa-angle-right"></i></a>
         </li>
         {{-- <li>
+            <a href="/visiting" wire:navigate
+                class="{{ request()->is('visiting') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Visiting
+        <i class="fa-solid fa-angle-right"></i></a>
+        </li>
+
+        <li>
             <a href="/social-program" wire:navigate
                 class="{{ request()->is('social-program') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Social Program
                 <i class="fa-solid fa-angle-right"></i></a>

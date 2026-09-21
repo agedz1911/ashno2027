@@ -1,38 +1,43 @@
 <!-- Header -->
 <header class="bg-gradient-to-l from-[#0E1E41] via-[#C0809A] to-[#4E6690] hidden lg:block text-white text-sm py-2">
-    <div class="mx-auto flex justify-end items-center px-4 py-2">
-
-        {{-- <div>
-            <a class="btn btn-sm btn-outline text-sky-950 border-white rounded-full shadow-none w-8" href="mailto:tiolan@pharma-pro.com">
+    <div class="mx-auto flex justify-between items-center px-4 py-2">
+        <div class="flex">
+            <div class="border-l pr-3">
+                <a href="javascript:void(0)" class="ml-4 text-sm hover:underline hover:text-[#C0809A]">
+                    Asian Society of Head & Neck Oncology
+                </a>
+            </div>
+            {{-- <div class="border-r pr-3">
+                <a href="https://www.ins.or.id/" target="_blank"
+                    class="ml-4 text-sm hover:underline hover:text-primary">
+                    Indonesian Neurosurgical Society
+                </a>
+            </div> --}}
+        </div>
+        <div>
+            <a class="btn btn-sm btn-outline text-[#C0809A] border-white rounded-full shadow-none w-8"
+                href="mailto:ashno2027@pharma-pro.com">
                 <i class="fa fa-envelope">
                 </i>
             </a>
-            <a class="btn btn-sm btn-outline text-sky-950 border-white rounded-full shadow-none w-8" href="tel:+62816995230">
+            <a class="btn btn-sm btn-outline text-[#C0809A] border-white rounded-full shadow-none w-8"
+                href="tel:+6282277832431">
                 <i class="fa fa-phone">
                 </i>
             </a>
 
-            <a class="btn btn-sm btn-outline text-sky-950 border-white rounded-full shadow-none w-8" href="https://wa.me/+6281317857586" target="_blank">
+            <a class="btn btn-sm btn-outline text-[#C0809A] border-white rounded-full shadow-none w-8"
+                href="https://wa.me/+6282277832431" target="_blank">
                 <i class="fa fa-whatsapp">
                 </i>
             </a>
-            <a class="btn btn-sm btn-outline text-sky-950 border-white rounded-full shadow-none w-8" href="javascript:void(0)">
+            <a class="btn btn-sm btn-outline text-[#C0809A] border-white rounded-full shadow-none w-8"
+                href="javascript:void(0)">
                 <i class="fa fa-instagram">
                 </i>
             </a>
-        </div> --}}
-        <div class="flex">
-            <div class="border-r pr-3">
-                <a href="https://wfns.org/" target="_blank" class="ml-4 text-sm hover:underline hover:text-primary">
-                    World Federation of Neurosurgical Societies
-                </a>
-            </div>
-            <div class="border-r pr-3">
-                <a href="https://www.ins.or.id/" target="_blank" class="ml-4 text-sm hover:underline hover:text-primary">
-                    Indonesian Neurosurgical Society
-                </a>
-            </div>
         </div>
+
     </div>
 </header>
 <!-- Navigation -->
@@ -43,15 +48,15 @@
         <div class="drawer-content flex flex-col">
             <div class="navbar">
                 <div class="navbar-start">
-                    <img src="assets/images/logo/logo-event-dark.png" class="w-full max-w-36 hidden md:block" alt="Logo" />
+                    <img src="assets/images/logo/logo-event-dark.png" class="w-full max-w-36 hidden md:block"
+                        alt="Logo" />
                     <img src="assets/images/logo/logo-event-dark.png" class="w-full max-w-36 md:hidden" alt="Logo" />
                 </div>
                 <div class="navbar-center hidden xl:flex py-2  max-w-6xl">
                     <x-section.menu />
                 </div>
                 <div class="navbar-end">
-                    <div onclick="contact.showModal()"
-                        class="btn bg-[#C0809A] rounded-lg shadow-none mx-2 flex gap-2">
+                    <div onclick="contact.showModal()" class="btn bg-[#C0809A] rounded-lg shadow-none mx-2 flex gap-2">
                         <i class="fa fa-image-portrait"></i>
                         Contact
                     </div>
