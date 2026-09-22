@@ -120,10 +120,10 @@
                                 <div class="flex min-w-0 items-center gap-4">
                                     <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
                                         alt="{{ $welcomeMessage->name }}"
-                                        class="h-20 w-20 shrink-0 border-4 border-white object-cover shadow-md sm:h-24 sm:w-24">
+                                        class="h-20 w-20 shrink-0 border-4 border-white object-cover shadow-md sm:h-28 sm:w-28">
                                     <div class="min-w-0">
                                         <p class="text-sm leading-5">{{ $welcomeMessage->title }}</p>
-                                        <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A] sm:text-xl">{{
+                                        <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A]">{{
                                             $welcomeMessage->name }}</h3>
                                         @if ($welcomeMessage->name2 && $welcomeMessage->title2)
                                         <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2 }},

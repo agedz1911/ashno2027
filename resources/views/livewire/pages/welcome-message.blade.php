@@ -63,7 +63,7 @@
                                 class="md:h-52 md:w-52 h-24 w-24 shrink-0  border-4 border-white/20 object-cover shadow-xl sm:h-40 sm:w-40">
                             <div class="min-w-0">
                                 <p class="text-sm text-center md:text-start leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
-                                <h3 class="mt-2 text-xl font-bold leading-tight text-center md:text-start text-white sm:text-2xl">{{
+                                <h3 class="mt-2 text-xl font-bold leading-tight text-center md:text-start text-white">{{
                                     $welcomeMessage->name }}</h3>
                             </div>
                         </div>
