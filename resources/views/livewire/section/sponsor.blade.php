@@ -18,6 +18,9 @@
             </p>
         </div> --}}
         <div class="my-5 ">
+            <p class="text-gray-900 text-justify mb-5">
+                Partnering with us allows you to connect directly with local, regional and international key opinion leaders, showcase cutting-edge medical technologies, and expand your brand footprint across a rapidly growing healthcare market. To secure your place among our core corporate partners and receive the comprehensive sponsorship proposal, please contact the Congress Secretariat via email at <a class="text-primary hover:text-indigo-600 hover:underline" href="mailto:ashno2027@pharma-pro.com">ashno2027@pharma-pro.com</a>
+            </p>
             <h1 class="text-lg font-bold mb-2">Force Majeure, Event Modifications, and Sponsor Property Liability</h1>
             <p class="text-gray-900 text-justify">The organizing committee shall not be held liable for any financial losses, unfulfilled promotional exposure, or operational disruptions resulting from a force majeure event—including natural disasters, facility failure, or man-made emergencies - occurring prior to, during, or after the event.</p>
             <ul class="list-disc ml-5 text-gray-900 text-justify mt-4">

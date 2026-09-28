@@ -9,12 +9,25 @@
     <div class="absolute inset-0 bg-gradient-to-b from-[#0E1E41] to-[#0E1E41]/90"></div>
     <div class="relative">
         <div class="flex flex-col items-center w-full max-w-4xl m-auto">
+            <div class="flex flex-wrap justify-center items-center gap-4 px-3 md:px-0">
+                <div class="card bg-white rounded-xl shadow-md">
+                    <div class="card-body">
+                        <img src="{{asset('assets/images/logo/logo-event-dark.png')}}" class="h-20 max-h-full" alt="Icon" class="">
+                    </div>
+                </div>
+                <div class="card bg-white rounded-xl shadow-md">
+                    <div class="card-body">
+                        <img src="{{asset('assets/images/pp-footer-n.png')}}" class="w-full max-w-xs" alt="Icon">
+                    </div>
+                </div>
+            </div>
 
-            <img src="assets/images/logo/logo-event.png" class="max-w-xs" alt="Icon" class="">
 
             <div class="border-b border-white m-auto mb-6 mt-4 w-full max-w-3xl pb-10">
 
-                <p class="mt-6 font-semibold mb-3">Congress Secretariat</p>
+                <p class="mt-6 font-semibold">Congress Secretariat</p>
+                <p class="font-semibold mb-3">PT. Pharma-Pro International </p>
+                <p class="font-semibold">Ms. Nova </p>
                 <p class="mb-3"> Komplek Duta Merlin Blok C 35-36. <br>
                     Jl. Gajah Mada 3 – 5, Jakarta 10130, Indonesia </p>
 
@@ -68,7 +81,7 @@
                             href="{{route('submission')}}">Submission</a></li>
                     <li class="text-sm font-normal hover:text-[#C0809A] hover:underline"><a
                             href="{{route('sponsors')}}">Become a Sponsor</a></li>
-                    
+
                 </ul>
             </div>
         </div>
