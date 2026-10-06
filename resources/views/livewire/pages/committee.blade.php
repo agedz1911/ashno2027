@@ -12,9 +12,9 @@
 
     <section class="mx-auto w-full pattern px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="bg-competition w-full h-full absolute"></div>
-        @foreach ($uniqueCategories as $category)
+        {{-- @foreach ($uniqueCategories as $category)
         <h2 class="text-center text-xl lg:text-2xl font-bold mb-5 uppercase text-[#C0809A]">{{$category}}</h2>
-        {{-- <div class="flex flex-col items-center text-center group">
+        <div class="flex flex-col items-center text-center group">
             <div class="relative mb-4">
 
                 <div
@@ -32,8 +32,8 @@
                 </div>
             </div>
 
-        </div> --}}
-        {{-- <div class="flex flex-wrap gap-4 justify-center mb-12">
+        </div>
+        <div class="flex flex-wrap gap-4 justify-center mb-12">
             @foreach ($committees as $committee)
             @if ($committee->category == $category)
             <div class="card w-full max-w-xs flex flex-col items-center text-center group ">
@@ -63,8 +63,8 @@
             </div>
             @endif
             @endforeach
-        </div> --}}
-        @endforeach
+        </div>
+        @endforeach --}}
         <div class="grid grid-cols-1 gap-3 relative ">
             @if (count($committees) > 0)
             @foreach ($uniqueCategories as $category)
