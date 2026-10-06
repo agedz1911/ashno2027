@@ -17,7 +17,7 @@
                         Bridging Gaps & Driving Change "</p>
                 </div>
                 <div class="flex flex-col md:flex-row lg:justify-start justify-center items-center gap-3 mt-5">
-                    <div class="flex items-center">
+                    <div class="flex items-center bg-white p-4 rounded-xl shadow-md">
                         <div class="shrink-0 bg-gradient-to-br from-[#0E1E41] to-[#C0809A] p-4 rounded-full">
                             <i class="fa fa-calendar-o text-xl text-white"></i>
                         </div>
@@ -30,7 +30,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="flex items-center px-5">
+                    <div class="flex items-center bg-white p-4 rounded-xl shadow-md">
                         <div class="shrink-0 bg-gradient-to-br from-[#0E1E41] to-[#C0809A] p-4 rounded-full">
                             <i class="fa fa-map-marker text-xl text-white"></i>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="flex-1 p-7 sm:p-9">
                             <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{ $welcomeMessage->title }}</p>
                             <div class="h-px w-12 bg-[#C0809A]"></div>
-                            <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base">
+                            <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base script-font">
                                 {!! Str::limit(str($welcomeMessage->description)->markdown()->sanitizeHtml(), 450) !!}
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 <div class="flex min-w-0 items-center gap-4">
                                     <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
                                         alt="{{ $welcomeMessage->name }}"
-                                        class="h-20 w-20 shrink-0 border-4 border-white object-cover shadow-md sm:h-28 sm:w-28">
+                                        class="h-20 w-20 shrink-0 rounded-full border-4 border-white object-cover shadow-md sm:h-28 sm:w-28">
                                     <div class="min-w-0">
                                         <p class="text-sm leading-5">{{ $welcomeMessage->title }}</p>
                                         <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A]">{{

@@ -7,12 +7,12 @@
                     Asian Society of Head & Neck Oncology
                 </a>
             </div>
-            {{-- <div class="border-r pr-3">
-                <a href="https://www.ins.or.id/" target="_blank"
-                    class="ml-4 text-sm hover:underline hover:text-primary">
-                    Indonesian Neurosurgical Society
+            <div class="border-l pr-3">
+                <a href="https://perdokli.org/" target="_blank"
+                    class="ml-4 text-sm hover:underline hover:text-[#4E6690]">
+                    Indonesian Society of Head and Neck Oncology
                 </a>
-            </div> --}}
+            </div>
         </div>
         <div>
             <a class="btn btn-sm btn-outline text-[#C0809A] border-white rounded-full shadow-none w-8"

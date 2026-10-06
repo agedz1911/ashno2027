@@ -5,8 +5,12 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 body {
-    /* font-family: "Roboto", sans-serif; */
+    font-family: "Poppins", sans-serif;
     color: #484A70;
+}
+
+.script-font {
+    font-family: "Satisfy", Poppins;
 }
 
 .banner {

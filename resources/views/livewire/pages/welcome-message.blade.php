@@ -21,7 +21,7 @@
                         }}</p>
                     <div class="h-px w-14 bg-white"></div>
                     <div
-                        class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 sm:text-base sm:leading-8 text-white">
+                        class="welcome-message-copy  mt-8 text-justify text-[15px] leading-8 sm:text-base sm:leading-8 text-white">
                         {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
                     </div>
 
@@ -45,7 +45,7 @@
                         $welcomeMessage->title }}</p>
                     <div class="h-px w-14 bg-[#C0809A]"></div>
                     <div
-                        class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
+                        class="welcome-message-copy mt-8 text-justify script-font text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
                         {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
                     </div>
 
@@ -60,9 +60,9 @@
                         <div class="flex flex-col items-center gap-5">
                             <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
                                 alt="{{ $welcomeMessage->name }}"
-                                class="md:h-52 md:w-52 h-24 w-24 shrink-0  border-4 border-white/20 object-cover shadow-xl sm:h-40 sm:w-40">
+                                class="md:h-64 md:w-64 h-24 w-24 shrink-0 rounded-full border-4 border-white/20 object-cover shadow-xl sm:h-40 sm:w-40">
                             <div class="min-w-0">
-                                <p class="text-sm text-center md:text-start leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
+                                <p class="text-xs text-center md:text-start leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
                                 <h3 class="mt-2 text-xl font-bold leading-tight text-center md:text-start text-white">{{
                                     $welcomeMessage->name }}</h3>
                             </div>
@@ -76,7 +76,7 @@
                                     class="h-24 w-24 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-28 sm:w-28">
                                 <div class="min-w-0">
                                     <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title2 }}</p>
-                                    <h3 class="mt-1 text-lg font-bold leading-tight text-white sm:text-xl">{{
+                                    <h3 class="mt-1 text-xl font-bold leading-tight text-white sm:text-xl">{{
                                         $welcomeMessage->name2 }}</h3>
                                 </div>
                             </div>
