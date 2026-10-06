@@ -10,7 +10,7 @@
             <div class="border-l pr-3">
                 <a href="https://perdokli.org/" target="_blank"
                     class="ml-4 text-sm hover:underline hover:text-[#4E6690]">
-                    Indonesian Society of Head and Neck Oncology
+                    Indonesian Head and Neck Oncologyst Society
                 </a>
             </div>
         </div>
