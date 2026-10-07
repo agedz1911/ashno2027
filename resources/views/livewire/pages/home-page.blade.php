@@ -5,7 +5,7 @@
             class="z-10 relative pt-10 md:pt-14 lg:pt-32 flex flex-col md:flex-row items-start justify-start md:items-start md:justify-center gap-4">
 
             <div class="px-5 md:px-20 order-1 lg:order-1 w-full max-w-4xl flex flex-col items-center md:items-start">
-                <img src="{{asset('assets/images/logo/logo-all.png')}}" class="max-w-xl w-full" alt="Banner">
+                <img src="{{asset('assets/images/logo/logo-all-new.png')}}" class="max-w-xl w-full" alt="Banner">
                 <img src="{{asset('assets/images/logo/icon.png')}}" class="max-w-sm w-full" alt="">
                 <div class="w-full max-w-3xl mt-2 text-center md:text-start">
                     <p class="text-2xl font-bold tracking-wider mb-4">The 10<sup>th</sup> Conference of the Asian
