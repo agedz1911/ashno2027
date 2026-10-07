@@ -10,16 +10,15 @@
     <meta name="keywords" content="wfns, Bali, International, Neurosurgeon, Neurosurgery" />
     <meta name="author" content="AV-PRO" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css">
     <!-- favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom_new.css">
     <!--FontAwesome CSS-->
     <script src="https://kit.fontawesome.com/f662ae2afd.js" crossorigin="anonymous"></script>
     <!-- daisy ui -->

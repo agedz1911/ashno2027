@@ -9,8 +9,10 @@ body {
     color: #484A70;
 }
 
-.script-font {
-    font-family: "Satisfy", Poppins;
+.tulisan {
+    font-family: "Sue Ellen Francisco", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .banner {

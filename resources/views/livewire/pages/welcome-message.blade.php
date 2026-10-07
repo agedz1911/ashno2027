@@ -45,7 +45,7 @@
                         $welcomeMessage->title }}</p>
                     <div class="h-px w-14 bg-[#C0809A]"></div>
                     <div
-                        class="welcome-message-copy mt-8 text-justify script-font text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
+                        class="welcome-message-copy mt-8 text-justify tulisan text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
                         {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
                     </div>
 

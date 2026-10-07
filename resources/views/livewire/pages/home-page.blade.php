@@ -103,37 +103,41 @@
                     <div class="mx-auto h-1 w-16 bg-[#C0809A]"></div>
                 </div>
 
-                <div class="gap-2 w-full max-w-6xl mx-auto">
+                <div class="gap-2 w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2">
                     @foreach ($welcomeMessages as $welcomeMessage)
                     <article
                         class="flex h-full flex-col overflow-hidden border border-white/20 bg-white rounded-md shadow-[0_18px_45px_rgba(11,20,90,0.2)]">
                         <div class="flex-1 p-7 sm:p-9">
                             <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{ $welcomeMessage->title }}</p>
                             <div class="h-px w-12 bg-[#C0809A]"></div>
-                            <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base script-font">
+                            <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base tulisan">
                                 {!! Str::limit(str($welcomeMessage->description)->markdown()->sanitizeHtml(), 450) !!}
                             </div>
                         </div>
-
                         <div class="border-t border-sky-100 bg-[#f4eff7] p-6 sm:p-7">
-                            <div class="flex items-center justify-between gap-4 flex-col md:flex-row">
-                                <div class="flex min-w-0 items-center gap-4">
-                                    <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
-                                        alt="{{ $welcomeMessage->name }}"
-                                        class="h-20 w-20 shrink-0 rounded-full border-4 border-white object-cover shadow-md sm:h-28 sm:w-28">
-                                    <div class="min-w-0">
-                                        <p class="text-sm leading-5">{{ $welcomeMessage->title }}</p>
-                                        <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A]">{{
+                            <div class="relative">
+                                <div class="flex items-center justify-between gap-4 flex-col md:flex-row">
+                                    <div class="flex min-w-0 items-center gap-4">
+                                        <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
+                                            alt="{{ $welcomeMessage->name }}"
+                                            class="h-20 w-20 shrink-0 rounded-full border-4 border-white object-cover shadow-md sm:h-28 sm:w-28">
+                                        <div class="min-w-0">
+                                            <p class="text-xs leading-5">{{ $welcomeMessage->title }}</p>
+                                            <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A]">{{
                                             $welcomeMessage->name }}</h3>
-                                        @if ($welcomeMessage->name2 && $welcomeMessage->title2)
-                                        <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2 }},
-                                            {{ $welcomeMessage->title2 }}</p>
-                                        @endif
+                                            @if ($welcomeMessage->name2 && $welcomeMessage->title2)
+                                            <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2 }},
+                                                {{ $welcomeMessage->title2 }}
+                                            </p>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                                <a href="{{ route('welcome-message') }}#welcome-message-{{ $welcomeMessage->id }}"
-                                    class="shrink-0 border border-[#C0809A] px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#C0809A] transition hover:bg-[#C0809A] hover:text-white">Read
-                                    more</a>
+                                <div class="float-end mt-3">
+                                    <a href="{{ route('welcome-message') }}#welcome-message-{{ $welcomeMessage->id }}"
+                                        class="shrink-0 border border-[#C0809A] px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#C0809A] transition hover:bg-[#C0809A] hover:text-white">Read
+                                        more</a>
+                                </div>
                             </div>
                         </div>
                     </article>
