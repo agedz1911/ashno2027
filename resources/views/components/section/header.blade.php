@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class="bg-gradient-to-l from-[#0E1E41] via-[#C0809A] to-[#4E6690] hidden lg:block text-white text-sm py-2">
+{{-- <header class="bg-gradient-to-l from-[#0E1E41] via-[#C0809A] to-[#4E6690] hidden lg:block text-white text-sm py-2">
     <div class="mx-auto flex justify-between items-center px-4 py-2">
         <div class="flex">
             <div class="border-l pr-3">
@@ -39,7 +39,7 @@
         </div>
 
     </div>
-</header>
+</header> --}}
 <!-- Navigation -->
 <nav id="navbar"
     class="w-full py-2 bg-transparent z-20 shadow-lg sticky lg:shadow-none lg:fixed transition-colors duration-300">

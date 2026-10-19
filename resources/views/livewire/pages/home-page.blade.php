@@ -1,20 +1,26 @@
 <div class="relative">
     <section class="lg:min-h-screen banner relative pb-16 lg:pb-28">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#C6BFB0]/40 from-10% to-[#F6E9E3]/80"></div>
+        {{-- <div class="absolute inset-0 bg-gradient-to-t from-[#C6BFB0]/40 from-10% to-[#F6E9E3]/80"></div> --}}
         <div
             class="z-10 relative pt-10 md:pt-14 lg:pt-32 flex flex-col md:flex-row items-start justify-start md:items-start md:justify-center gap-4">
 
             <div class="px-5 md:px-20 order-1 lg:order-1 w-full max-w-4xl flex flex-col items-center md:items-start">
-                <img src="{{asset('assets/images/logo/logo-all-new.png')}}" class="max-w-xl w-full" alt="Banner">
-                <img src="{{asset('assets/images/logo/icon.png')}}" class="max-w-sm w-full" alt="">
-                <div class="w-full max-w-3xl mt-2 text-center md:text-start">
-                    <p class="text-2xl font-bold tracking-wider mb-4">The 10<sup>th</sup> Conference of the Asian
-                        Society of Head &
-                        Neck Oncology (ASHNO) in conjunction with <br>
-                        The 1<sup>st</sup> Surabaya Head & Neck Oncology Summit (SHNOS)
+                <img src="{{asset('assets/images/logo/logo-all-new.png')}}" class="max-w-sm w-full" alt="Banner">
+                {{-- <img src="{{asset('assets/images/logo/icon.png')}}" class="max-w-sm w-full" alt=""> --}}
+                <div class="w-full max-w-3xl mt-2 text-center md:text-start ">
+                    <p class="text-lg md:text-xl uppercase mb-2">The 10<sup>th</sup> Conference of the</p>
+                    <p class="text-4xl md:text-5xl font-bold tulisan2 uppercase mb-3"> Asian
+                        Society of <br> Head &
+                        Neck Oncology <br> (ASHNO)
                     </p>
-                    <p class="italic font-bold text-lg md:text-3xl">" Sea to Summit: Innovating,
-                        Bridging Gaps & Driving Change "</p>
+                    <p class="uppercase tracking-widest text-sm mb-2">in conjunction with <br>
+                        <span class="uppercase font-semibold tracking-wider text-sm">
+                            The 1<sup>st</sup> Surabaya Head & Neck Oncology Summit (SHNOS)
+                        </span>
+                    </p>
+                    <hr class="border-amber-400 border-4 mb-0 w-28">
+                    <p class="text-xl md:text-8xl font-extrabold tracking-wide italic tulisan2">Sea <span class="text-amber-400">to</span> <span class="text-[#C0809A]">Summit</span></p>
+                    <p class="text-lg font-semibold tracking-widest tulisan2 uppercase">Innovating, Bridging Gaps & Driving Change </p>
                 </div>
                 <div class="flex flex-col md:flex-row lg:justify-start justify-center items-center gap-3 mt-5">
                     <div class="flex items-center bg-white p-4 rounded-xl shadow-md">
@@ -49,7 +55,7 @@
                     <a class="btn bg-[#C0809A] hover:bg-[#5f3e4b] hover:text-white rounded-xl"><i
                             class="fa-solid fa-file-download mr-1 text-xs"></i>Download
                         Announcement </a>
-                    <a href="/registration" wire:navigate class="btn hover:bg-[#C0809A] btn-outline rounded-xl"><i
+                    <a href="/registration" wire:navigate class="btn bg-[#5f3e4b] text-white hover:bg-[#C0809A] rounded-xl"><i
                             class="fa-solid fa-pen-to-square"></i> Register Now </a>
                 </div>
             </div>
@@ -57,13 +63,13 @@
                 <livewire:section.flyer />
             </div>
         </div>
-        <div
+        {{-- <div
             class="absolute wave block md:hidden lg:block overflow-hidden w-full z-0 left-0 leading-none bottom-[-1px]">
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="white" fill-opacity="1" d="M0,256L720,224L1440,160L1440,320L720,320L0,320Z"></path>
             </svg>
-        </div>
+        </div> --}}
     </section>
 
     <section class="px-2 -mt-10 lg:-mt-30 lg:px-7 pb-24">
@@ -108,7 +114,8 @@
                     <article
                         class="flex h-full flex-col overflow-hidden border border-white/20 bg-white rounded-md shadow-[0_18px_45px_rgba(11,20,90,0.2)]">
                         <div class="flex-1 p-7 sm:p-9">
-                            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{ $welcomeMessage->title }}</p>
+                            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{
+                                $welcomeMessage->title }}</p>
                             <div class="h-px w-12 bg-[#C0809A]"></div>
                             <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base tulisan">
                                 {!! Str::limit(str($welcomeMessage->description)->markdown()->sanitizeHtml(), 450) !!}
@@ -124,9 +131,10 @@
                                         <div class="min-w-0">
                                             <p class="text-xs leading-5">{{ $welcomeMessage->title }}</p>
                                             <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A]">{{
-                                            $welcomeMessage->name }}</h3>
+                                                $welcomeMessage->name }}</h3>
                                             @if ($welcomeMessage->name2 && $welcomeMessage->title2)
-                                            <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2 }},
+                                            <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2
+                                                }},
                                                 {{ $welcomeMessage->title2 }}
                                             </p>
                                             @endif
