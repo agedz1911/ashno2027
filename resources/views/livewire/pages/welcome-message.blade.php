@@ -112,8 +112,8 @@
                             </span>
 
                             <h1
-                                class="pt-2 tulisan2 font-serif text-3xl font-bold leading-tight tracking-tight text-brand-darkPurple sm:text-4xl lg:text-5xl">
-                                From {{ $welcomeMessage->name ?: $welcomeMessage->title ?: 'Our Representative' }}
+                                class="pt-2 tulisan2 font-serif text-2xl font-bold leading-tight tracking-tight text-brand-darkPurple sm:text-3xl lg:text-4xl">
+                                From {{ $welcomeMessage->title }}
                             </h1>
 
                             <div
