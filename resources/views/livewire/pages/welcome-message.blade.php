@@ -117,7 +117,7 @@
                     <div class="relative z-10 mt-6 space-y-2 border-t border-slate-200/80 pt-8 sm:pt-10">
                         <div class="h-14 w-48 text-slate-900">
                             @if ($welcomeMessage->image2 != null)
-                            <img src="{{ $welcomeMessage->image2 }}" alt="Welcome Message Image"
+                            <img src="{{ asset('storage/' . $welcomeMessage->image2) }}" alt="Welcome Message Image"
                                 class="h-full w-full object-cover">
                             @endif
                         </div>
