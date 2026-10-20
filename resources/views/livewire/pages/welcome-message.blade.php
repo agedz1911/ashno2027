@@ -89,7 +89,7 @@
 
                         <div class="pointer-events-none relative h-24 w-full overflow-hidden opacity-30">
                             <img
-                                src="{{ asset('assets/images/bg.png') }}"
+                                src="{{ asset('assets/images/bg2.png') }}"
                                 alt=""
                                 class="h-full w-full object-cover object-bottom" />
                         </div>
