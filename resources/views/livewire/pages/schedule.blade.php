@@ -9,7 +9,7 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
+    <x-section.breadcrumbs />
     <div class="px-5 md:px-10 pt-0 mt-10 flex flex-col md:flex-row gap-4 justify-center">
         <label class="input input-lg input-warning rounded-lg w-full max-w-6xl">
             <i class="fa fa-search opacity-45 text-sm"></i>

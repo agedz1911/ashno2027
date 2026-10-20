@@ -1,5 +1,5 @@
 <div>
-    
+
     <section class="relative overflow-hidden bg-[#C0809A]">
         <div
             class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
@@ -9,8 +9,8 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
-    <section class="mx-auto w-full px-5 lg:px-10 pt-16 pb-28 pattern relative" >
+    <x-section.breadcrumbs />
+    <section class="mx-auto w-full px-5 lg:px-10 pt-16 pb-28 pattern relative">
         <div class="bg-competition w-full h-full absolute"></div>
         <div class="relative z-10">
             @foreach ($uniqueCategories as $category)

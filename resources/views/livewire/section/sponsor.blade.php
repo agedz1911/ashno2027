@@ -9,7 +9,7 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
+    <x-section.breadcrumbs />
     <section class="mx-auto w-full px-5 md:px-10 pt-0 pb-10 md:py-20 ">
         {{-- <div class="mb-5 text-justify text-gray-900 ">
             <p>As we prepare to make history with the WFNS 2027; the first-ever WFNS world congress hosted in the ASEAN region - your organization has an unprecedented opportunity to position itself at the forefront of global neurosurgical innovation.

@@ -9,7 +9,8 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
+    <x-section.breadcrumbs />
+    
     <section class="mx-auto w-full pattern px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="bg-competition w-full h-full absolute"></div>
         @foreach ($uniqueCategories as $category)
@@ -36,13 +37,12 @@
         <div class="flex flex-wrap gap-4 justify-center mb-12">
             @foreach ($committees as $committee)
             @if ($committee->category == $category)
-            <div class="card w-full max-w-xs flex flex-col items-center text-center group ">
+            <div class="card w-full border-[#C0809A]/50 border-x rounded-2xl max-w-xs flex flex-col items-center text-center group ">
                 <div
                     class="w-40 h-40 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-tr from-[#0E1E41] via-[#4E6690] to-[#C0809A] shadow-lg group-hover:scale-105 transition-transform duration-300">
                     <div class="w-full h-full rounded-full overflow-hidden bg-slate-200 border-2 border-white">
                         <img src="{{$committee->image ? asset('storage/' . $committee->image) : "
-                            assets/images/speaker.png"}}" alt="{{$committee->name}}"
-                            class="w-full h-full object-cover">
+                            assets/images/speaker.png"}}" alt="{{$committee->name}}" class="w-full h-full object-cover">
                     </div>
                 </div>
                 <div class="card-body ">

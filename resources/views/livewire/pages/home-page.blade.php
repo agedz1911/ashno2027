@@ -19,14 +19,16 @@
                         </span>
                     </p>
                     <hr class="border-amber-400 border-4 mb-0 w-28">
-                    <p class="text-xl md:text-8xl font-extrabold tracking-wide italic tulisan2">Sea <span class="text-amber-400">to</span> <span class="text-[#C0809A]">Summit</span></p>
-                    <p class="text-lg font-semibold tracking-widest tulisan2 uppercase">Innovating, Bridging Gaps & Driving Change </p>
+                    <p class="text-xl md:text-8xl font-extrabold tracking-wide italic tulisan2">Sea <span
+                            class="text-amber-400">to</span> <span class="text-[#C0809A]">Summit</span></p>
+                    <p class="text-lg font-semibold tracking-widest tulisan2 uppercase">Innovating, Bridging Gaps &
+                        Driving Change </p>
                 </div>
-                <div class="flex flex-col md:flex-row lg:justify-start justify-center items-center gap-3 mt-5">
-                    <div class="flex items-center bg-white p-4 rounded-xl shadow-md">
-                        <div class="shrink-0 bg-gradient-to-br from-[#0E1E41] to-[#C0809A] p-4 rounded-full">
-                            <i class="fa fa-calendar-o text-xl text-white"></i>
-                        </div>
+                <div class="flex flex-col md:flex-row lg:justify-start justify-center items-center gap-3 mt-2">
+                    <div class="flex items-center p-4 rounded-xl shadow-md">
+                        {{-- <div class="shrink-0 bg-gradient-to-br from-[#0E1E41] to-[#C0809A] p-4 rounded-full">
+                        </div> --}}
+                        <i class="fa fa-calendar-o text-3xl text-[#0E1E41]"></i>
                         <div class="flex-1 min-w-0 ms-4">
                             <p class="text-sm font-medium  truncate">
                                 Thursday to Sunday
@@ -36,26 +38,26 @@
                             </p>
                         </div>
                     </div>
-                    <div class="flex items-center bg-white p-4 rounded-xl shadow-md">
-                        <div class="shrink-0 bg-gradient-to-br from-[#0E1E41] to-[#C0809A] p-4 rounded-full">
-                            <i class="fa fa-map-marker text-xl text-white"></i>
-                        </div>
+                    <div class="flex items-center p-4 rounded-xl shadow-md">
+
+                        <i class="fa fa-map-marker text-3xl text-[#0E1E41]"></i>
                         <div class="flex-1 min-w-0 ms-4">
                             <p class="text-sm font-medium  truncate ">
                                 The Westin Surabaya
                             </p>
                             <p class="text-sm text-gray-500 truncate">
-                                East Java, Indonesia
+                                Surabaya, Indonesia
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-7 w-full gap-1 flex flex-wrap justify-center md:justify-start">
+                <div class="mt-5 w-full gap-1 flex flex-wrap justify-center md:justify-start">
                     <a class="btn bg-[#C0809A] hover:bg-[#5f3e4b] hover:text-white rounded-xl"><i
                             class="fa-solid fa-file-download mr-1 text-xs"></i>Download
                         Announcement </a>
-                    <a href="/registration" wire:navigate class="btn bg-[#5f3e4b] text-white hover:bg-[#C0809A] rounded-xl"><i
+                    <a href="/registration" wire:navigate
+                        class="btn btn-outline border-white text-white hover:bg-[#C0809A] rounded-xl"><i
                             class="fa-solid fa-pen-to-square"></i> Register Now </a>
                 </div>
             </div>
@@ -71,8 +73,7 @@
             </svg>
         </div> --}}
     </section>
-
-    <section class="px-2 -mt-10 lg:-mt-30 lg:px-7 pb-24">
+    <section class="px-2 mt-0 py-2 lg:py-0 lg:-mt-30 lg:px-7">
         <div id="countdown" class="flex flex-wrap justify-center lg:justify-end md:flex-row w-full mx-auto gap-4">
             <div class="card bg-gradient-to-tr from-[#0E1E41] to-[#C0809A] rounded-2xl w-full max-w-2xl">
                 <div class="card-body">
@@ -95,6 +96,63 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class=" bg-gradient-to-t from-[#0E1E41] to-[#330e41] px-10 py-10">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-800/80">
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-2 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
+                        <i class="fa-solid fa-microscope text-4xl"></i>
+                    </div>
+                    <span
+                        class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">cutting-edge<br>science</span>
+                </div>
+
+            
+                <div class="flex flex-col items-center md:flex-row justify-center gap-2 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
+                        <i class="fa-solid fa-gear text-4xl"></i>
+                    </div>
+                    <span
+                        class="text-[11px] font-extrabold text-center md:text-start tracking-wider text-slate-200 uppercase">PRACTICAL<br>INNOVATION</span>
+                </div>
+
+                
+                <div class="flex flex-col md:flex-row items-center justify-center gap-2 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
+                        <i class="fa-solid fa-people-group text-4xl"></i>
+                    </div>
+                    <span
+                        class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">REGIONAL<br>COLLABORATION</span>
+                </div>
+
+                
+                <div class="flex flex-col items-center md:flex-row justify-center gap-2 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
+                        <i class="fa-solid fa-globe text-4xl"></i>
+                    </div>
+                    <span
+                        class="text-[11px] font-extrabold tracking-wider text-slate-200 uppercase">GLOBAL<br>PERSPECTIVE</span>
+                </div>
+
+                <div
+                    class="col-span-2 sm:col-span-1 flex flex-col md:flex-row items-center justify-center gap-2 group cursor-pointer">
+                    <div
+                        class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
+                        <i class="fa-solid fa-mountain-sun text-4xl"></i>
+                    </div>
+                    <span class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">A
+                        UNIQUE<br>DESTINATION</span>
+                </div>
+
             </div>
         </div>
     </section>

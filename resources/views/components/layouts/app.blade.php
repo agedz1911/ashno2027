@@ -43,6 +43,7 @@
 
 <body>
     <x-section.header />
+   
     {{ $slot }}
     <x-section.footer />
 

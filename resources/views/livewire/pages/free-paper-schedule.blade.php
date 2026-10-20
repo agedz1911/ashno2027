@@ -1,5 +1,5 @@
 <div>
-   
+
     <section class="relative overflow-hidden bg-[#075a99]">
         <div
             class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(18,183,221,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(20,89,157,0.95),transparent_45%)]">
@@ -9,7 +9,7 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
+    <x-section.breadcrumbs />
     <section class="px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="mt-10">
             <div class="text-center lg:text-start mb-5 md:mb-10">

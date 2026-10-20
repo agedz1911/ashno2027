@@ -9,7 +9,7 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
+    <x-section.breadcrumbs />
     <section class="pb-24 pt-10 md:px-10 px-3" id="bali">
         <div class="px-2 lg:px-5">
             <div class="flex gap-2 flex-wrap justify-between w-full items-end">

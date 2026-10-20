@@ -1,5 +1,5 @@
 <div>
-    
+
     <section class="relative overflow-hidden bg-[#C0809A]">
         <div
             class="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(14,30,65,0.7),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(78,102,144,0.95),transparent_45%)]">
@@ -9,7 +9,7 @@
             <div class="mt-7 h-1 w-20 bg-[#f6c945]"></div>
         </div>
     </section>
-
+    <x-section.breadcrumbs />
     <section class="bg-base-100 px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="text-center lg:text-start mb-5 md:mb-10">
             <p class="mb-1 text-[#C0809A]">Submission</p>
