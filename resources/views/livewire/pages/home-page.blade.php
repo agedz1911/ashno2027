@@ -21,7 +21,7 @@
                     <hr class="border-amber-400 border-4 mb-0 w-28">
                     <p class="text-xl md:text-8xl font-extrabold tracking-wide italic tulisan2">Sea <span
                             class="text-amber-400">to</span> <span class="text-[#C0809A]">Summit</span></p>
-                    <p class="text-lg font-semibold tracking-widest tulisan2 uppercase">Innovating, Bridging Gaps &
+                    <p class="text-lg font-semibold tracking-widest tulisan2 uppercase">innovation, Bridging Gaps &
                         Driving Change </p>
                 </div>
                 <div class="flex flex-col md:flex-row lg:justify-start justify-center items-center gap-3 mt-2">
