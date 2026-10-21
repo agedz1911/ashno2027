@@ -113,7 +113,7 @@
                         class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">cutting-edge<br>science</span>
                 </div>
 
-            
+
                 <div class="flex flex-col items-center md:flex-row justify-center gap-2 group cursor-pointer">
                     <div
                         class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
@@ -123,7 +123,7 @@
                         class="text-[11px] font-extrabold text-center md:text-start tracking-wider text-slate-200 uppercase">PRACTICAL<br>INNOVATION</span>
                 </div>
 
-                
+
                 <div class="flex flex-col md:flex-row items-center justify-center gap-2 group cursor-pointer">
                     <div
                         class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
@@ -133,7 +133,7 @@
                         class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">REGIONAL<br>COLLABORATION</span>
                 </div>
 
-                
+
                 <div class="flex flex-col items-center md:flex-row justify-center gap-2 group cursor-pointer">
                     <div
                         class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
@@ -149,7 +149,8 @@
                         class="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:bg-amber-400/10 transition-all">
                         <i class="fa-solid fa-mountain-sun text-4xl"></i>
                     </div>
-                    <span class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">A
+                    <span
+                        class="text-[11px] text-center md:text-start font-extrabold tracking-wider text-slate-200 uppercase">A
                         UNIQUE<br>DESTINATION</span>
                 </div>
 
@@ -174,6 +175,11 @@
                         <div class="flex-1 p-7 sm:p-9">
                             <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{
                                 $welcomeMessage->title }}</p>
+                            {{-- @if ($welcomeMessage->title != null)
+                            @elseif ($welcomeMessage->title2)
+                            <p class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#4E6690]"> {{
+                                $welcomeMessage->title2 }}</p>
+                            @endif --}}
                             <div class="h-px w-12 bg-[#C0809A]"></div>
                             <div class="mt-6 text-justify text-sm leading-7 text-slate-600 sm:text-base">
                                 {!! Str::limit(str($welcomeMessage->description)->markdown()->sanitizeHtml(), 450) !!}
@@ -187,15 +193,20 @@
                                             alt="{{ $welcomeMessage->name }}"
                                             class="h-20 w-20 shrink-0 rounded-full border-4 border-white object-cover shadow-md sm:h-28 sm:w-28">
                                         <div class="min-w-0">
+                                            @if ($welcomeMessage->title != null)
                                             <p class="text-xs leading-5">{{ $welcomeMessage->title }}</p>
+                                            @elseif ($welcomeMessage->title2)
+                                            <p class="text-xs leading-5">{{ $welcomeMessage->title2 }}</p>
+                                            @endif
+
                                             <h3 class="mt-1 text-lg font-bold leading-tight text-[#C0809A]">{{
                                                 $welcomeMessage->name }}</h3>
-                                            @if ($welcomeMessage->name2 && $welcomeMessage->title2)
+                                            {{-- @if ($welcomeMessage->name2 && $welcomeMessage->title2)
                                             <p class="mt-2 text-xs leading-5 text-slate-500">{{ $welcomeMessage->name2
                                                 }},
                                                 {{ $welcomeMessage->title2 }}
                                             </p>
-                                            @endif
+                                            @endif --}}
                                         </div>
                                     </div>
                                 </div>
