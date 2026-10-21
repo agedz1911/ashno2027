@@ -55,6 +55,10 @@
                         <p class="text-xs font-semibold uppercase tracking-wide text-slate-300">
                             {{ $welcomeMessage->title }}
                         </p>
+                        @elseif ($welcomeMessage->title2)
+                        <p class="text-xs font-semibold uppercase tracking-wide text-slate-300">
+                            {{ $welcomeMessage->title2 }}
+                        </p>
                         @endif
                         @if ($welcomeMessage->name)
                         <h2 class="pt-1 font-serif text-xl font-bold leading-snug tracking-wide text-white sm:text-2xl">
@@ -62,7 +66,7 @@
                         </h2>
                         @endif
 
-                        @if ($welcomeMessage->name2 || $welcomeMessage->title2)
+                        {{-- @if ($welcomeMessage->name2 || $welcomeMessage->title2)
                         <div class="mt-5 flex items-center gap-4 border-t border-white/20 pt-5">
                             <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/speaker.png') }}"
                                 alt="{{ $welcomeMessage->name2 ?: 'Additional speaker' }}"
@@ -80,7 +84,7 @@
                                 @endif
                             </div>
                         </div>
-                        @endif
+                        @endif --}}
                     </div>
 
                     <div class="pointer-events-none relative h-24 w-full overflow-hidden opacity-30">
@@ -103,11 +107,12 @@
                             Welcome Message
                         </span>
 
+                        @if ($welcomeMessage->title != null)
                         <h1
-                            class="pt-2 tulisan2 font-serif text-2xl font-bold leading-tight tracking-tight text-brand-darkPurple sm:text-3xl lg:text-4xl">
+                            class="pt-2 tulisan2 font-serif text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
                             From {{ $welcomeMessage->title }}
                         </h1>
-
+                        @endif
                         <div
                             class="welcome-message-copy pt-2 text-sm font-normal leading-relaxed text-slate-700 sm:text-base">
                             {!! str($welcomeMessage->description ?? '')->markdown()->sanitizeHtml() !!}
