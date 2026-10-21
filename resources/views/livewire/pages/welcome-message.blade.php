@@ -109,7 +109,7 @@
 
                         @if ($welcomeMessage->title != null)
                         <h1
-                            class="pt-2 tulisan2 font-serif text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
+                            class="pt-2 tulisan2 italic font-serif text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-5xl">
                             From {{ $welcomeMessage->title }}
                         </h1>
                         @endif
