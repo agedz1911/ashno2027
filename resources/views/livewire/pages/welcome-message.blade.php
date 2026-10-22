@@ -98,7 +98,7 @@
                     <div
                         class="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden opacity-40">
                         <img src="{{ asset('assets/images/pattern/design-option-1.png') }}" alt=""
-                            class="h-full w-full object-cover object-right" />
+                            class="w-full object-cover h-full object-right-bottom" />
                     </div>
 
                     <div class="relative z-10 space-y-6">

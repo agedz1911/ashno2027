@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Faculty extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'name',
         'country',
@@ -21,8 +21,13 @@ class Faculty extends Model
     ];
 
 
-    public function schedules() : HasMany
+    public function schedules(): HasMany
     {
-       return $this->hasMany(Schedule::class, 'faculty_id');
+        return $this->hasMany(Schedule::class, 'faculty_id');
+    }
+
+    public function scheduleSessions(): HasMany
+    {
+        return $this->hasMany(ScheduleSession::class, 'faculty_id');
     }
 }

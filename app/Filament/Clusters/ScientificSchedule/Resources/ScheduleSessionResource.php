@@ -5,6 +5,7 @@ namespace App\Filament\Clusters\ScientificSchedule\Resources;
 use App\Filament\Clusters\ScientificSchedule;
 use App\Filament\Clusters\ScientificSchedule\Resources\ScheduleSessionResource\Pages;
 use App\Filament\Clusters\ScientificSchedule\Resources\ScheduleSessionResource\RelationManagers;
+use App\Models\Faculty;
 use App\Models\ScheduleSession;
 use Filament\Forms;
 use Filament\Forms\Components\ColorPicker;
@@ -53,6 +54,10 @@ class ScheduleSessionResource extends Resource
                         'Room 3' => 'Room 3',
                     ]),
                 TextInput::make('moderator'),
+                Select::make('faculty_id')
+                    ->label('Faculty')
+                    ->searchable()
+                    ->options(Faculty::all()->pluck('name', 'id')),
                 Textarea::make('panelist'),
                 TextInput::make('no_urut')
                     ->numeric(),
