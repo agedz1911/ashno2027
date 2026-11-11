@@ -24,22 +24,22 @@
                     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class=" text-white uppercase text-center bg-primary ">
+                            <thead class=" text-white uppercase text-center bg-[#C0809A] ">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Category
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Early Bird Registration <br>
-                                        up to 1 May (23:59 UTC+8)
+                                        up to 1 May 2027
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 31 Oct (23:59 UTC+8)
+                                        2 May - 25 Jul 2027
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Late/Onsite Registration <br>
-                                        31 Oct onwards (23:59 UTC+8)
+                                        after 25 Jul 2027       
                                     </th>
 
                                 </tr>
@@ -72,8 +72,8 @@
                             </tbody>
                         </table>
                         <div class="relative mt-2">
-                            <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                class="btn btn-primary btn-outline btn-lg rounded-xl mb-3 float-end text-sm"><i
+                            <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                class="btn hover:bg-[#C0809A] btn-outline btn-lg rounded-xl mb-3 float-end text-sm"><i
                                     class="fa-solid fa-list mx-3"></i>Register Now!</a>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class=" text-white uppercase text-center bg-primary ">
+                            <thead class=" text-white uppercase text-center bg-[#C0809A] ">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Category
@@ -93,7 +93,7 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 31 Oct (23:59 UTC+8)
+                                        2 May - 25 jul 2027
                                     </th>
                                 </tr>
                             </thead>
@@ -120,8 +120,8 @@
                             </tbody>
                         </table>
                         <div class="relative mt-2">
-                            <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                class="btn btn-primary btn-lg rounded-xl mb-3 float-end text-sm"><i
+                            <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                class="btn hover:bg-[#C0809A] btn-lg rounded-xl mb-3 float-end text-sm"><i
                                     class="fa-solid fa-list mx-3"></i>Register Now!</a>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class=" text-white uppercase text-center bg-primary ">
+                            <thead class=" text-white uppercase text-center bg-[#C0809A] ">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Category
@@ -140,7 +140,7 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 31 Oct (23:59 UTC+8)
+                                        2 May - 25 jul 2027
                                     </th>
                                 </tr>
                             </thead>
@@ -167,8 +167,8 @@
                             </tbody>
                         </table>
                         <div class="relative mt-2">
-                            <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                class="btn btn-primary btn-lg rounded-xl mb-3 float-end text-sm"><i
+                            <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                class="btn hover:bg-[#C0809A] btn-lg rounded-xl mb-3 float-end text-sm"><i
                                     class="fa-solid fa-list mx-3"></i>Register Now!</a>
                         </div>
                     </div>
@@ -176,7 +176,7 @@
                     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class=" text-white uppercase text-center bg-primary ">
+                            <thead class=" text-white uppercase text-center bg-[#C0809A] ">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Category
@@ -217,8 +217,8 @@
                             </tbody>
                         </table>
                         <div class="relative mt-2">
-                            <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                class="btn btn-primary btn-lg rounded-xl mb-3 float-end text-sm"><i
+                            <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                class="btn hover:bg-[#C0809A] btn-lg rounded-xl mb-3 float-end text-sm"><i
                                     class="fa-solid fa-list mx-3"></i>Register Now!</a>
                         </div>
                     </div>
@@ -237,22 +237,22 @@
                     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class=" text-white uppercase text-center bg-primary ">
+                            <thead class=" text-white uppercase text-center bg-[#C0809A] ">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Category
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Early Bird Registration <br>
-                                        up to 1 May (23:59 UTC+8)
+                                        up to 1 May 2027
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 31 Oct (23:59 UTC+8)
+                                        2 May - 25 jul 2027
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Late/Onsite Registration <br>
-                                        31 Oct onwards (23:59 UTC+8)
+                                        after 25 Jul 2027       
                                     </th>
 
                                 </tr>
@@ -282,8 +282,8 @@
                             </tbody>
                         </table>
                         <div class="relative mt-2">
-                            <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                class="btn btn-primary btn-outline btn-lg rounded-xl mb-3 float-end text-sm"><i
+                            <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                class="btn hover:bg-[#C0809A] btn-outline btn-lg rounded-xl mb-3 float-end text-sm"><i
                                     class="fa-solid fa-list mx-3"></i>Register Now!</a>
                         </div>
                     </div>
@@ -303,8 +303,8 @@
                                 </div>
                                 {!! str($regLocal->description)->markdown()->sanitizeHtml() !!}
                                 <div class="mt-6">
-                                    <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                        class="btn btn-primary  rounded-xl mb-3 btn-block"><i
+                                    <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                        class="btn hover:bg-[#C0809A]  rounded-xl mb-3 btn-block"><i
                                             class="fa-solid fa-list mx-3"></i>Register Now!</a>
                                 </div>
                             </div>
@@ -316,7 +316,7 @@
                     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
                     <div class="relative overflow-x-auto shadow sm:rounded-lg ">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                            <thead class=" text-white uppercase text-center bg-primary ">
+                            <thead class=" text-white uppercase text-center bg-[#C0809A] ">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Category
@@ -356,8 +356,8 @@
                             </tbody>
                         </table>
                         <div class="relative mt-2">
-                            <a href="https://expo.virconex-id.com/registration/wfns2027"
-                                class="btn btn-primary btn-lg rounded-xl mb-3 float-end text-sm"><i
+                            <a href="https://expo.virconex-id.com/registration/ashno2027"
+                                class="btn hover:bg-[#C0809A] btn-lg rounded-xl mb-3 float-end text-sm"><i
                                     class="fa-solid fa-list mx-3"></i>Register Now!</a>
                         </div>
                     </div>
@@ -399,7 +399,7 @@
     <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
 <div class="relative overflow-x-auto shadow sm:rounded-lg ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-        <thead class=" text-white uppercase text-center bg-primary ">
+        <thead class=" text-white uppercase text-center bg-[#C0809A] ">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Category
@@ -410,7 +410,7 @@
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Regular Registration <br>
-                    2 May - 31 Oct (23:59 UTC+8)
+                    2 May - 25 jul 2027
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Late/Onsite Registration <br>
@@ -444,8 +444,8 @@
         </tbody>
     </table>
     <div class="relative mt-2">
-        <a href="https://expo.virconex-id.com/registration/wfns2027"
-            class="btn btn-primary btn-outline btn-lg rounded-xl mb-3 float-end text-sm"><i
+        <a href="https://expo.virconex-id.com/registration/ashno2027"
+            class="btn hover:bg-[#C0809A] btn-outline btn-lg rounded-xl mb-3 float-end text-sm"><i
                 class="fa-solid fa-list mx-3"></i>Register Now!</a>
     </div>
 </div>
@@ -465,8 +465,8 @@
             </div>
             {!! str($regLocal->description)->markdown()->sanitizeHtml() !!}
             <div class="mt-6">
-                <a href="https://expo.virconex-id.com/registration/wfns2027"
-                    class="btn btn-primary  rounded-xl mb-3 btn-block"><i
+                <a href="https://expo.virconex-id.com/registration/ashno2027"
+                    class="btn hover:bg-[#C0809A]  rounded-xl mb-3 btn-block"><i
                         class="fa-solid fa-list mx-3"></i>Register Now!</a>
             </div>
         </div>
@@ -478,7 +478,7 @@
 <h2 class="uppercase font-semibold text-[#C0809A]mb-2 mt-5">{{$category}}</h2>
 <div class="relative overflow-x-auto shadow sm:rounded-lg ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-        <thead class=" text-white uppercase text-center bg-primary ">
+        <thead class=" text-white uppercase text-center bg-[#C0809A] ">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     Category
@@ -518,8 +518,8 @@
         </tbody>
     </table>
     <div class="relative mt-2">
-        <a href="https://expo.virconex-id.com/registration/wfns2027"
-            class="btn btn-primary btn-lg rounded-xl mb-3 float-end text-sm"><i
+        <a href="https://expo.virconex-id.com/registration/ashno2027"
+            class="btn hover:bg-[#C0809A] btn-lg rounded-xl mb-3 float-end text-sm"><i
                 class="fa-solid fa-list mx-3"></i>Register Now!</a>
     </div>
 </div>
