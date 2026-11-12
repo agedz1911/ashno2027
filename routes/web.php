@@ -38,3 +38,4 @@ Route::get('/about-ins', AboutIns::class)->name('about-ins');
 Route::get('/about-wfns', AboutWfns::class)->name('about-wfns');
 Route::get('/wfns-congress-2027', AseanRegion::class)->name('wfns-congress-2027');
 Route::get('/sponsorship', Sponsor::class)->name('sponsorship');
+Route::get('/art-competition', \App\Livewire\Pages\ArtCompetition::class)->name('art-competition');

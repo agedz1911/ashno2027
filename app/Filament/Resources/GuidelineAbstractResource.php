@@ -33,6 +33,7 @@ class GuidelineAbstractResource extends Resource
                         'Free Paper' => 'Free Paper',
                         'Abstract Video' => 'Abstract Video',
                         'Educative Video' => 'Educative Video',
+                        'Head & Neck Art' => 'Head & Neck Art',
                     ])
                     ->required(),
                 MarkdownEditor::make('description'),

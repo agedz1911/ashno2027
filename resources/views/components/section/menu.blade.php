@@ -85,28 +85,33 @@
     {{-- <div class="dropdown dropdown-hover">
         <div tabindex="0"
             class="{{ request()->is('visiting')  || request()->is('social-program')  ? 'text-[#C0809A]' : 'text-gray-800' }} hover:cursor-pointer hover:text-fuchsia-800">
-            Visiting <i class="fa-solid fa-angle-down"></i></div>
-        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box gap-2 w-60 p-2 shadow-sm">
-            <li>
-                <a href="/visiting" wire:navigate
-                    class="{{ request()->is('visiting') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">
-                    Bali <i class="fa-solid fa-angle-right"></i></a>
-            </li>
-            <li>
-                <a href="/visiting#venue"
-                    class="{{ request()->is('visiting#venue') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">Conference
-                    Venue <i class="fa-solid fa-angle-right"></i></a>
-            </li>
-             <li>
-                <a href="/social-program" wire:navigate
-                    class="{{ request()->is('social-program') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">Social
-            Program <i class="fa-solid fa-angle-right"></i></a>
-            </li> 
-    </div>--}}
-    <li>
-        <a href="/sponsorship" wire:navigate
-            class="{{ request()->is('sponsorship') ? 'text-[#C0809A]' : 'text-gray-800' }} hover:text-fuchsia-800 hover:underline">Become a Sponsor
-        </a>
-    </li>
+    Visiting <i class="fa-solid fa-angle-down"></i></div>
+    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box gap-2 w-60 p-2 shadow-sm">
+        <li>
+            <a href="/visiting" wire:navigate
+                class="{{ request()->is('visiting') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">
+                Bali <i class="fa-solid fa-angle-right"></i></a>
+        </li>
+        <li>
+            <a href="/visiting#venue"
+                class="{{ request()->is('visiting#venue') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">Conference
+                Venue <i class="fa-solid fa-angle-right"></i></a>
+        </li>
+        <li>
+            <a href="/social-program" wire:navigate
+                class="{{ request()->is('social-program') ? 'text-[#C0809A]' : '' }} justify-between hover:text-fuchsia-800">Social
+                Program <i class="fa-solid fa-angle-right"></i></a>
+        </li>
+        </div>--}}
+        <li>
+            <a href="/art-competition" wire:navigate
+                class="{{ request()->is('art-competition') ? 'text-[#C0809A]' : 'text-gray-800' }} hover:text-fuchsia-800 hover:underline">Art Competition
+            </a>
+        </li>
+        <li>
+            <a href="/sponsorship" wire:navigate
+                class="{{ request()->is('sponsorship') ? 'text-[#C0809A]' : 'text-gray-800' }} hover:text-fuchsia-800 hover:underline">Become a Sponsor
+            </a>
+        </li>
 
-</ul>
+    </ul>
