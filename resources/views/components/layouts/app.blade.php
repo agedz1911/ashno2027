@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ $title ?? 'WFNS 2027' }}</title>
-    <meta name="description" content="The 20th World Congress of Neurosurgery - One world, one neurosurgery, The Bali Renaissance" />
-    <meta name="keywords" content="wfns, Bali, International, Neurosurgeon, Neurosurgery" />
+    <title>{{ $title ?? 'ASHNO 2027' }}</title>
+    <meta name="description" content="The 10th Conference of the Asian Society of Head & Neck Oncology
+(ASHNO) " />
+    <meta name="keywords" content="ashno, Surabaya, International, Head & Neck Oncology" />
     <meta name="author" content="AV-PRO" />
 
     <!-- favicon -->
@@ -30,7 +31,7 @@
 
 <body>
     <x-section.header />
-   
+
     {{ $slot }}
     <x-section.footer />
 
