@@ -13,8 +13,10 @@
 
     <section class="px-5 md:px-10 pt-0 pb-10 md:py-20">
         <div class="text-center md:text-start mb-5">
-            <h2 class="mb-3 uppercase text-4xl tracking-wide font-bold">Hotel <span class="text-[#C0809A]">Reservation</span></h2>
-            <p class="text-gray-500">The organizers of the ASHNO 2027 Congress have secured competitive rates at a variety of
+            <h2 class="mb-3 uppercase text-4xl tracking-wide font-bold">Hotel <span
+                    class="text-[#C0809A]">Reservation</span></h2>
+            <p class="text-gray-500">The organizers of the ASHNO 2027 Congress have secured competitive rates at a
+                variety of
                 hotels near the Venue to accommodate delegates
                 with different budgets and preferences. Hotel reservations will open and are subject
                 to availability. It is advisable to book your preferred hotel as soon as possible
@@ -28,11 +30,10 @@
                     <div class="mb-3 relative">
                         {{-- menampilkan string HTML --}}
                         {!! $accommodation->tag ? '<span
-                            class="absolute top-1 right-4 translate-y-5 bg-[#1B1464] rounded-xl text-white px-3 py-1">
+                            class="absolute top-1 right-4 translate-y-5 bg-[#C0809A] rounded-xl text-white px-3 py-1">
                             <p class="text-xs">' . $accommodation->tag . '</p>
                         </span>' : " " !!}
-                        <a href="javascript:void(0)"><img
-                                src="{{ asset('storage/' . $accommodation->image) }}"
+                        <a href="javascript:void(0)"><img src="{{ asset('storage/' . $accommodation->image) }}"
                                 alt="{{$accommodation->hotel_name}}" class="w-full object-cover rounded-xl"></a>
                     </div>
                     <div class="mb-3 px-3">
@@ -45,27 +46,33 @@
                                 @endif
                                 @endfor
                         </div>
-                        <p class="mt-2 mb-5 text-xs"><i
-                                class="fa-solid fa-circle-info"></i>
+                        <p class="mt-2 mb-5 text-xs"><i class="fa-solid fa-circle-info"></i>
                             {{$accommodation->distance}}
                         </p>
                         <p class="text-sm"> Estimated Cost/Night</p>
                         <div class="text-sm mb-6 flex justify-center gap-3">
-                            <p class="text-primary font-semibold mb-0"><span
-                                    class="fw-normal">IDR</span>
+                            @if ($accommodation->idr_price !== null && $accommodation->idr_price !== 0)
+                            <p class="text-primary font-semibold mb-0"><span class="fw-normal">IDR</span>
                                 {{number_format($accommodation->idr_price, 0, ',', '.')}}
                             </p>
-                            <p class="text-primary font-semibold"><span
-                                    class="fw-normal">USD</span>
+                            @else
+                            <p class="text-xs italic text-gray-500">
+                                to be announced
+                            </p>
+                            @endif
+                            @if ($accommodation->usd_price !== null && $accommodation->usd_price !== 0)
+                            <p class="text-primary font-semibold"><span class="fw-normal">USD</span>
                                 {{$accommodation->usd_price}}
                             </p>
+                            @endif
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-2 px-2">
                         <a href="{{$accommodation->url ? $accommodation->url : 'javascript:void(0)'}}"
-                            class="btn btn-primary w-full rounded-lg">Book Now</a>
+                            class="btn hover:bg-[#C0809A] w-full rounded-lg">Book Now</a>
                         <a href="{{$accommodation->direction ? $accommodation->direction : 'javascript:void(0)'}}"
-                            class="btn btn-primary w-full btn-outline rounded-lg"><i class="fa-solid fa-location-dot mx-1"></i>Direction</a>
+                            class="btn hover:bg-[#C0809A] btn-outline w-full btn-outline rounded-lg"><i
+                                class="fa-solid fa-location-dot mx-1"></i>Direction</a>
                     </div>
                 </div>
             </div>

@@ -35,11 +35,11 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 25 Jul 2027
+                                        2 May - 26 Jul 2027
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Late/Onsite Registration <br>
-                                        after 25 Jul 2027       
+                                        after 26 Jul 2027       
                                     </th>
 
                                 </tr>
@@ -93,7 +93,7 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 25 jul 2027
+                                        2 May - 26 jul 2027
                                     </th>
                                 </tr>
                             </thead>
@@ -140,7 +140,7 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 25 jul 2027
+                                        2 May - 26 jul 2027
                                     </th>
                                 </tr>
                             </thead>
@@ -248,11 +248,11 @@
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Regular Registration <br>
-                                        2 May - 25 jul 2027
+                                        2 May - 26 jul 2027
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Late/Onsite Registration <br>
-                                        after 25 Jul 2027       
+                                        after 26 Jul 2027       
                                     </th>
 
                                 </tr>
@@ -410,7 +410,7 @@
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Regular Registration <br>
-                    2 May - 25 jul 2027
+                    2 May - 26 jul 2027
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Late/Onsite Registration <br>
