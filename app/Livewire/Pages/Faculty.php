@@ -3,55 +3,59 @@
 namespace App\Livewire\Pages;
 
 use App\Models\Faculty as ModelsFaculty;
+use App\Models\Category_Faculty;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
 #[Title('Faculties - ASHNO 2027')]
 class Faculty extends Component
 {
-    public $searchTerm = "";
-    public $readyToLoad = false;
+    public string $searchTerm = '';
+    public string $selectedCategory = 'all';
+    public bool $readyToLoad = false;
 
-    public function loadFaculties()
+    public function loadFaculties(): void
     {
         $this->readyToLoad = true;
     }
 
+    public function selectCategory(string $categoryId): void
+    {
+        $this->selectedCategory = $categoryId;
+    }
+
     public function render()
     {
+        $categories = Category_Faculty::query()
+            ->orderBy('no_urut')
+            ->orderBy('name')
+            ->get();
+
         if (!$this->readyToLoad) {
             return view('livewire.pages.faculty', [
-                'indofaculties' => collect(),
-                'foreignfaculties' => collect(),
+                'faculties' => collect(),
+                'categories' => $categories,
                 'readyToLoad' => $this->readyToLoad,
             ]);
         }
 
-        // $indofaculties = ModelsFaculty::where('is_active', true)->where('country', 'indonesia')->with('schedules')->orderBy('name', 'asc')->get();
-        // $foreignfaculties = ModelsFaculty::where('is_active', true)->where('country', '!=', 'indonesia')->with('schedules')->orderBy('name', 'asc')->get();
-        $queryIndo = ModelsFaculty::where('is_active', true)->orderBy('no_urut', 'asc')->with('schedules')->where('country', 'Indonesia');
-        $queryForeign = ModelsFaculty::where('is_active', true)->orderBy('no_urut', 'asc')->with('schedules')->where('country', '!=', 'Indonesia');
-        if (strlen($this->searchTerm) >= 3) {
-            $queryIndo->where(function ($q) {
-                $q->where('name', 'like', '%' . $this->searchTerm . '%');
-            });
-        }
-        if (strlen($this->searchTerm) >= 3) {
-            $queryForeign->where(function ($q) {
-                $q->where('name', 'like', '%' . $this->searchTerm . '%');
-            });
-        }
-        $indofaculties = $queryIndo
-            ->orderBy('name', 'asc')
-            ->get();
+        $facultyQuery = ModelsFaculty::query()
+            ->where('is_active', true)
+            ->with(['categoryFaculty', 'schedules.sesi', 'scheduleSessions'])
+            ->orderBy('no_urut')
+            ->orderBy('name');
 
-        $foreignfaculties = $queryForeign
-            ->orderBy('name', 'asc')
-            ->get();
+        if ($this->selectedCategory !== 'all') {
+            $facultyQuery->where('id_category', $this->selectedCategory);
+        }
+
+        if (strlen($this->searchTerm) >= 3) {
+            $facultyQuery->where('name', 'like', '%' . $this->searchTerm . '%');
+        }
 
         return view('livewire.pages.faculty', [
-            'indofaculties' => $indofaculties,
-            'foreignfaculties' => $foreignfaculties,
+            'faculties' => $facultyQuery->get(),
+            'categories' => $categories,
             'readyToLoad' => $this->readyToLoad,
         ]);
     }
