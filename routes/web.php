@@ -26,6 +26,7 @@ Route::get('/', HomePage::class)->name('home');
 Route::get('/welcome-message', WelcomeMessage::class)->name('welcome-message');
 Route::get('/organizing-committee', Committee::class)->name('organizing-committee');
 Route::get('/program-at-glance', AtGlance::class)->name('program-at-glance');
+Route::get('/topics', Topic::class)->name('topics');
 Route::get('/scientific-schedule', Schedule::class)->name('scientific-schedule');
 Route::get('/registration', Registration::class)->name('registration');
 Route::get('/submission', GuidelineAbstract::class)->name('submission');

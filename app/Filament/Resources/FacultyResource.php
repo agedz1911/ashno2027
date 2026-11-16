@@ -24,7 +24,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class FacultyResource extends Resource
 {
     protected static ?string $model = Faculty::class;
-    protected static ?string $navigationGroup = 'Front End Page';
+    protected static ?string $navigationGroup = 'Faculties';
+    protected static ?string $navigationLabel = 'Faculty';
     protected static ?string $navigationIcon = 'heroicon-o-user-plus';
 
     public static function form(Form $form): Form
@@ -50,6 +51,9 @@ class FacultyResource extends Resource
                 Textarea::make('description'),
                 TextInput::make('no_urut')
                     ->numeric(),
+                Select::make('id_category')
+                    ->relationship('categoryFaculty', 'name')
+                    ->required(),
                 Toggle::make('is_active')
                     ->inline()
                     ->default(true),
@@ -63,6 +67,9 @@ class FacultyResource extends Resource
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('categoryFaculty.name')
+                    ->label('Category')
+                    ->searchable(),
                 ImageColumn::make('image'),
                 TextColumn::make('country')
                     ->searchable(),

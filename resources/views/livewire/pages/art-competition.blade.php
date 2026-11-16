@@ -190,6 +190,9 @@
                 💡 Creative interpretations beyond these suggested themes are welcome, provided they are meaningfully
                 connected to the head and neck.
             </p>
+            <p class="text-sm text-red-600 italic mt-8 pt-8 border-t border-gray-200">
+                *Participants must be officially registered for ASHNO 2027 and have completed the registration fee payment.
+            </p>
         </div>
 
         <!-- FAQ Section -->

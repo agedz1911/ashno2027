@@ -34,11 +34,11 @@
             Scientific Program <i class="fa-solid fa-angle-down"></i></div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box gap-2 w-60 p-2 shadow-sm">
 
-            {{-- <li>
+            <li>
                 <a href="/topics" wire:navigate
                     class="{{ request()->is('topics') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800">
             Topics <i class="fa-solid fa-angle-right"></i></a>
-            </li> --}}
+            </li>
             <li>
                 <a href="/program-at-glance" wire:navigate
                     class="{{ request()->is('program-at-glance') ? 'text-fuchsia-800' : '' }} justify-between hover:text-fuchsia-800">Program

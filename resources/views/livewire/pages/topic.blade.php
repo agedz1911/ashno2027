@@ -24,7 +24,7 @@
             ->values();
             @endphp
 
-            <ol class="list-decimal list-inside space-y-2">
+            <ol class="list-decimal list-inside space-y-2 ml-3">
                 @foreach ($mainTopics as $main)
                 <li class="text-gray-800">
                     @if (in_array($main->name, ['Thursday, October 8, 2026', 'Friday, October 9, 2026']))

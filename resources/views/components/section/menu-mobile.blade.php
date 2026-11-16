@@ -21,11 +21,11 @@
                 class="{{ request()->is('faculties') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Faculties
                 <i class="fa-solid fa-angle-right"></i></a>
         </li>
-        {{-- <li>
+        <li>
             <a href="/topics" wire:navigate
                 class="{{ request()->is('topics') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">
         Topics <i class="fa-solid fa-angle-right"></i></a>
-        </li> --}}
+        </li>
         <li>
             <a href="{{route('program-at-glance')}}" wire:navigate
                 class="{{ request()->is('program-at-glance') ? 'text-[#C0809A]' : '' }} justify-between font-normal hover:text-[#0CA6DD] after:content-[''] relative after:absolute flex items-center hover:after:items-center transition-all after:transition-all duration-300 after:duration-300 after:bg-blue-800 hover:ps-3 after:left-0 after:h-0 hover:after:h-[5px] after:w-0 hover:after:w-[5px] after:rounded-full">Program
