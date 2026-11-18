@@ -35,9 +35,8 @@ class RegistrationResource extends Resource
                     ->options([
                         'symposium' => 'Symposium',
                         'workshop' => 'Workshop',
-                        'workshop microsurgery' => 'Workshop microsurgery ',
+                        'instructional course' => 'Instructional Course',
                         'master class' => 'Master Class',
-                        'Nurse Symposium' => 'Nurse Symposium',
                     ])
                     ->native(false),
                 Select::make('wilayah_reg')
@@ -55,7 +54,7 @@ class RegistrationResource extends Resource
                     ->native(false),
                 TextInput::make('normal_reg')
                     ->numeric(),
-                DatePicker::make('date_normal')
+                DatePicker::make('date_normal_reg')
                     ->native(false),
                 TextInput::make('onsite_reg')
                     ->numeric(),
