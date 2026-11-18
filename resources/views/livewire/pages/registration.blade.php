@@ -106,7 +106,7 @@
                                         0, ',', '.') : 'to be announce'}}</span>
                                 </div> --}}
                                 <div class="flex justify-between">
-                                    <h2 class="md:text-2xl text-xl font-bold">{{$regForeign->title}}</h2>
+                                    <h2 class="md:text-2xl text-xl font-bold">{{$regForeign->subtitle}}</h2>
                                     @if ($isEarlyBird)
                                     <span class="text-xl">USD
                                         {{number_format($regForeign->early_bird_reg, 0, ',', '.')}}
@@ -228,7 +228,7 @@
                                         0, ',', '.') : 'to be announce'}}</span>
                                 </div> --}}
                                 <div class="flex justify-between">
-                                    <h2 class="md:text-2xl text-xl font-bold">{{$regLocal->title}}</h2>
+                                    <h2 class="md:text-2xl text-xl font-bold">{{$regLocal->subtitle}}</h2>
                                     @if ($isEarlyBird)
                                     <span class="text-xl">IDR
                                         {{number_format($regLocal->early_bird_reg, 0, ',', '.')}}
