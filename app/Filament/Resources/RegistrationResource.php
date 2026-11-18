@@ -75,6 +75,7 @@ class RegistrationResource extends Resource
                 TextColumn::make('category_reg'),
                 TextColumn::make('wilayah_reg'),
                 TextColumn::make('title'),
+                TextColumn::make('subtitle'),
                 TextColumn::make('early_bird_reg')
                     ->numeric(),
                 TextColumn::make('normal_reg')
