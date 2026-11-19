@@ -42,7 +42,8 @@ class FlyerResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\Textarea::make('description'),
+                Forms\Components\MarkdownEditor::make('description')
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('no_urut')
                     ->required()
                     ->numeric(),
@@ -60,6 +61,8 @@ class FlyerResource extends Resource
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->limit(50),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('no_urut')
