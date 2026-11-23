@@ -1,328 +1,846 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="corporate">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ASHNO 2027 — Campaign Modal Dialog</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-          },
-          colors: {
-            surface: {
-              950: '#050A14',
-              900: '#0B1324',
-              800: '#121E36',
-            },
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    .modal-scroll::-webkit-scrollbar {
-      width: 6px;
-    }
-    .modal-scroll::-webkit-scrollbar-track {
-      background: rgba(15, 23, 42, 0.5);
-    }
-    .modal-scroll::-webkit-scrollbar-thumb {
-      background: rgba(34, 211, 238, 0.25);
-      border-radius: 9999px;
-    }
-    .modal-scroll::-webkit-scrollbar-thumb:hover {
-      background: rgba(34, 211, 238, 0.45);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASHNO 2027 | Abstract Submission Rules & Guidelines</title>
+    <!-- Tailwind CSS & DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0E1E41',
+                            navyDark: '#09142C',
+                            navyLight: '#172E5E',
+                            steel: '#4E6690',
+                            steelLight: '#6A83AD',
+                            steelSoft: '#EEF2F8',
+                            mauve: '#C0809A',
+                            mauveDark: '#A6647F',
+                            mauveSoft: '#FAF2F5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root, [data-theme="corporate"] {
+            --p: 221 64% 15%;       /* #0E1E41 Deep Midnight Navy */
+            --pc: 0 0% 100%;
+            --s: 336 34% 63%;       /* #C0809A Dusty Rose / Mauve */
+            --sc: 0 0% 100%;
+            --a: 218 30% 44%;       /* #4E6690 Slate Steel Blue */
+            --ac: 0 0% 100%;
+            --n: 221 64% 15%;
+            --nc: 0 0% 100%;
+            --b1: 0 0% 100%;
+            --b2: 216 33% 97%;
+            --b3: 217 24% 91%;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4E6690;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0E1E41;
+        }
+        /* Subtle CSS Grid Pattern replacing inline SVG */
+        .hero-grid-bg {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-200 font-sans antialiased min-h-screen flex items-center justify-center p-4">
+<body class="bg-[#F5F7FA] text-slate-800 font-sans antialiased selection:bg-[#C0809A] selection:text-white">
 
-  <!-- Trigger Button (Hanya untuk simulasi membuka modal) -->
-  <button
-    id="openModalBtn"
-    type="button"
-    class="px-5 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-display font-bold text-sm tracking-wide shadow-lg shadow-cyan-500/20 transition cursor-pointer"
-  >
-    Open ASHNO 2027 Course Modal
-  </button>
-
-  <!-- MODAL BACKDROP & DIALOG CONTAINER -->
-  <div
-    id="ashnoModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalTitle"
-    class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-200"
-  >
-    <!-- MODAL BOX -->
-    <div class="relative w-full max-w-3xl max-h-[90vh] flex flex-col rounded-2xl bg-surface-900 border border-slate-800 shadow-2xl shadow-black/60 overflow-hidden">
-
-      <!-- STICKY MODAL HEADER -->
-      <div class="flex items-start justify-between gap-4 px-5 py-4 sm:px-6 border-b border-slate-800/90 bg-surface-950/90 shrink-0">
-        <div>
-          <p class="text-[11px] font-display font-bold tracking-[0.18em] text-cyan-400 uppercase">
-            ASHNO 2027 &nbsp;|&nbsp; 5 AUGUST 2027 &nbsp;|&nbsp; SURABAYA, INDONESIA
-          </p>
-          <h2 id="modalTitle" class="font-display text-lg sm:text-xl font-extrabold text-white tracking-tight mt-0.5 leading-snug">
-            BEYOND OBSERVATION. INTO THE OPERATING FIELD.
-          </h2>
-          <p class="text-xs font-medium text-slate-400 mt-0.5">
-            XR-Enhanced Advanced Head &amp; Neck Ablative Cadaveric Dissection Course
-          </p>
+    <!-- Toast Notification for Copy Action -->
+    <div id="copyToast" class="toast toast-top toast-end z-50 hidden transition-all duration-300">
+        <div class="alert bg-[#0E1E41] text-white border border-[#C0809A]/50 shadow-xl rounded-xl flex items-center gap-2.5">
+            <i class="fa-solid fa-circle-check text-lg text-[#C0809A]"></i>
+            <span class="font-medium text-sm">Email copied to clipboard!</span>
         </div>
-
-        <button
-          id="closeModalBtn"
-          type="button"
-          aria-label="Close modal"
-          class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition shrink-0 cursor-pointer"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- SCROLLABLE MODAL BODY -->
-      <div class="modal-scroll overflow-y-auto px-5 py-5 sm:px-6 space-y-6 text-sm leading-relaxed">
-
-        <!-- Key Highlights Strip -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-          <div class="rounded-xl bg-surface-800/90 border border-cyan-500/20 px-3.5 py-2.5">
-            <p class="font-display font-bold text-xs text-cyan-300">Six Hours of Hands-On Dissection</p>
-          </div>
-          <div class="rounded-xl bg-surface-800/90 border border-cyan-500/20 px-3.5 py-2.5">
-            <p class="font-display font-bold text-xs text-cyan-300">Your Choice of Procedures</p>
-          </div>
-          <div class="rounded-xl bg-surface-800/90 border border-cyan-500/20 px-3.5 py-2.5">
-            <p class="font-display font-bold text-xs text-cyan-300">One Dedicated Expert at Your Table</p>
-          </div>
-        </div>
-
-        <!-- Intro Hook -->
-        <div class="rounded-xl bg-surface-950/70 border border-slate-800/90 p-4 space-y-2.5">
-          <p class="font-display text-xs font-bold tracking-widest text-cyan-400 uppercase">
-            This Is Not Just Another Cadaveric Workshop.
-          </p>
-          <p class="text-slate-200 font-medium">
-            How often have you attended a surgical workshop wishing for more hands-on time, closer faculty guidance, or the opportunity to explore a procedure that truly matters to your practice?
-          </p>
-          <p class="text-white font-semibold">
-            At ASHNO 2027, we are putting the dissection experience back into your hands.
-          </p>
-          <p class="text-slate-400">
-            Introducing an exclusive, XR-enhanced head and neck ablative dissection course, designed for surgeons who demand more from surgical education.
-          </p>
-        </div>
-
-        <!-- What Sets This Course Apart -->
-        <div class="space-y-3">
-          <h3 class="font-display text-xs font-bold tracking-[0.18em] text-slate-400 uppercase">
-            What Sets This Course Apart?
-          </h3>
-
-          <!-- 01 -->
-          <div class="rounded-xl bg-surface-800/60 border border-slate-800 p-4">
-            <p class="font-display font-bold text-cyan-400 text-xs uppercase tracking-wide">
-              01 | SIX HOURS. DEDICATED TO DISSECTION.
-            </p>
-            <p class="text-white font-medium mt-1">No lengthy lectures consuming your laboratory time.</p>
-            <p class="text-slate-400 mt-1">
-              Our didactic teaching is delivered separately via Zoom before the course, allowing you to arrive prepared and devote six hours to hands-on anatomical exploration.
-            </p>
-          </div>
-
-          <!-- 02 -->
-          <div class="rounded-xl bg-surface-800/60 border border-slate-800 p-4">
-            <p class="font-display font-bold text-cyan-400 text-xs uppercase tracking-wide">
-              02 | ONE INSTRUCTOR. TWO DISSECTORS. NO CROWDED TABLES.
-            </p>
-            <p class="text-white font-medium mt-1">
-              Experience focused, personalised guidance from experienced national and international surgical faculty.
-            </p>
-            <p class="text-slate-400 mt-1">
-              With a maximum of two dissectors per table and one dedicated instructor, you will have meaningful opportunities to dissect, ask questions, receive feedback, and explore complex surgical anatomy.
-            </p>
-          </div>
-
-          <!-- 03 -->
-          <div class="rounded-xl bg-surface-800/60 border border-cyan-500/25 p-4 space-y-2.5">
-            <p class="font-display font-bold text-cyan-400 text-xs uppercase tracking-wide">
-              03 | YOUR PROCEDURES. YOUR PRIORITIES.
-            </p>
-            <p class="text-white font-medium">Why follow the same programme as everyone else?</p>
-            <p class="text-slate-300">
-              Choose from an extensive menu of ablative head and neck procedures tailored to your learning interests. Explore procedures including:
-            </p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 pt-1 text-xs sm:text-[13px] text-slate-200">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Midfacial degloving</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Maxillectomy</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Parotidectomy with infratemporal fossa dissection</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Parapharyngeal space exploration</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Thyroidectomy</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Central compartment dissection</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Neck dissection</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Mandibulectomy</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Glossectomy via pull through</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Oropharyngectomy</li>
-              <li class="flex items-center gap-2 sm:col-span-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>Partial / total laryngectomy</li>
-            </ul>
-            <p class="text-xs font-medium text-cyan-300 pt-1">
-              Explore more than 6 procedures where time and anatomical feasibility permit.
-            </p>
-          </div>
-
-          <!-- 04 -->
-          <div class="rounded-xl bg-surface-800/60 border border-slate-800 p-4">
-            <p class="font-display font-bold text-cyan-400 text-xs uppercase tracking-wide">
-              04 | FRESH CADAVER. IMMERSIVE XR. REAL ANATOMICAL EXPLORATION.
-            </p>
-            <p class="text-white font-medium mt-1">
-              Experience fresh cadaveric dissection complemented by extended reality (XR) technology.
-            </p>
-            <p class="text-slate-400 mt-1">
-              Bridge three-dimensional anatomical visualisation with real surgical exposure to deepen your understanding of complex head and neck anatomy.
-            </p>
-          </div>
-
-          <!-- 05 -->
-          <div class="rounded-xl bg-surface-800/60 border border-slate-800 p-4">
-            <p class="font-display font-bold text-cyan-400 text-xs uppercase tracking-wide">
-              05 | LEARN WHAT TEXTBOOKS CANNOT FULLY TEACH.
-            </p>
-            <p class="text-white font-medium mt-1">Go beyond memorising operative steps.</p>
-            <p class="text-slate-400 mt-1 mb-2">Learn directly from experienced surgeons as they share:</p>
-            <ul class="space-y-1 text-xs sm:text-[13px] text-slate-300">
-              <li>• Surgical pearls and technical refinements</li>
-              <li>• Critical anatomical landmarks and danger zones</li>
-              <li>• Common pitfalls and strategies to avoid them</li>
-              <li>• Approaches to difficult surgical exposure</li>
-              <li>• Intraoperative decision-making and practical lessons from experience</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Learning Experience Summary -->
-        <div class="rounded-xl bg-cyan-950/30 border border-cyan-500/20 p-4 text-center space-y-1">
-          <p class="font-display font-bold text-white text-xs sm:text-sm uppercase">
-            A Different Kind of Surgical Learning Experience.
-          </p>
-          <p class="font-semibold text-cyan-300 text-xs sm:text-sm">
-            Your table. Your instructor. Your surgical priorities.
-          </p>
-          <p class="text-slate-300 text-xs sm:text-[13px]">
-            A deliberately limited number of participants ensures that the focus remains on meaningful hands-on experience rather than crowded demonstrations.
-          </p>
-        </div>
-
-        <!-- Course Details -->
-        <div class="rounded-xl bg-surface-950/80 border border-slate-800 p-4 space-y-2.5">
-          <h3 class="font-display text-xs font-bold tracking-[0.18em] text-cyan-400 uppercase">
-            Course Details
-          </h3>
-          <dl class="grid grid-cols-1 sm:grid-cols-3 gap-x-4 gap-y-2 text-xs sm:text-[13px]">
-            <dt class="font-semibold text-slate-400">Date</dt>
-            <dd class="sm:col-span-2 text-white font-medium">5 August 2027</dd>
-
-            <dt class="font-semibold text-slate-400">Time</dt>
-            <dd class="sm:col-span-2 text-white font-medium">07:00–14:00 WIB</dd>
-
-            <dt class="font-semibold text-slate-400">Venue</dt>
-            <dd class="sm:col-span-2 text-slate-200">Anatomy Cadaver Lab, Airlangga University, Surabaya, Indonesia</dd>
-
-            <dt class="font-semibold text-slate-400">Format</dt>
-            <dd class="sm:col-span-2 text-slate-200">Six hours of fresh-cadaver dissection, one hour of lunch and refreshment breaks, plus separate pre-course Zoom lectures</dd>
-
-            <dt class="font-semibold text-slate-400">Supervision</dt>
-            <dd class="sm:col-span-2 text-slate-200">One dedicated instructor per table, maximum two dissectors</dd>
-
-            <dt class="font-semibold text-slate-400">Faculty</dt>
-            <dd class="sm:col-span-2 text-slate-200">Experienced national and international surgical experts</dd>
-          </dl>
-        </div>
-
-        <!-- Scarcity Callout -->
-        <div class="rounded-xl bg-amber-500/10 border border-amber-400/25 p-4 text-center space-y-1">
-          <p class="font-display font-bold text-amber-300 text-xs uppercase tracking-wider">
-            Places Are Strictly Limited.
-          </p>
-          <p class="text-white font-semibold text-xs sm:text-sm">
-            Don't settle for watching when you could be dissecting.
-          </p>
-          <p class="text-slate-300 text-xs">
-            Take the opportunity to explore the procedures that matter most to your practice, under the close guidance of expert surgical faculty.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- STICKY MODAL FOOTER -->
-      <div class="px-5 py-3.5 sm:px-6 border-t border-slate-800 bg-surface-950/95 shrink-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <p class="text-[11px] font-display font-bold tracking-wider text-slate-400 uppercase text-center sm:text-left">
-          PREPARE ONLINE. DISSECT WITH PURPOSE. LEARN FROM THE EXPERTS.
-        </p>
-        <div class="flex items-center justify-end gap-2.5 shrink-0">
-          <button
-            id="secondaryCloseBtn"
-            type="button"
-            class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 transition cursor-pointer"
-          >
-            Close
-          </button>
-          <a
-            href="#reserve"
-            class="px-4 py-2.5 rounded-lg text-xs font-display font-extrabold tracking-wide uppercase bg-cyan-500 hover:bg-cyan-400 text-slate-950 shadow-md shadow-cyan-500/20 transition text-center"
-          >
-            Reserve Your Dissection Seat
-          </a>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <script>
-    const modal = document.getElementById('ashnoModal');
-    const openBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const secondaryCloseBtn = document.getElementById('secondaryCloseBtn');
+    <!-- Sticky Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="navbar px-0 min-h-[4rem]">
+                <div class="navbar-start">
+                    <div class="dropdown lg:hidden">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle mr-2">
+                            <i class="fa-solid fa-bars text-xl text-[#0E1E41]"></i>
+                        </div>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-white rounded-2xl w-64 border border-slate-100 space-y-1">
+                            <li><a href="#milestones" class="font-medium py-2 hover:text-[#0E1E41]"><i class="fa-solid fa-calendar-days w-4 text-[#C0809A]"></i> Key Milestones</a></li>
+                            <li><a href="#submission-rules" class="font-medium py-2 hover:text-[#0E1E41]"><i class="fa-solid fa-scale-balanced w-4 text-[#4E6690]"></i> Submission Rules</a></li>
+                            <li><a href="#topics" class="font-medium py-2 hover:text-[#0E1E41]"><i class="fa-solid fa-layer-group w-4 text-[#C0809A]"></i> Scientific Topics (32)</a></li>
+                            <li><a href="#ai-policy" class="font-medium py-2 hover:text-[#0E1E41]"><i class="fa-solid fa-robot w-4 text-[#4E6690]"></i> AI Policy & Guidelines</a></li>
+                            <li><a href="#presentation-guidelines" class="font-medium py-2 hover:text-[#0E1E41]"><i class="fa-solid fa-person-chalkboard w-4 text-[#C0809A]"></i> Presentation & e-Poster</a></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0E1E41] via-[#4E6690] to-[#C0809A] flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-microscope text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-xl tracking-tight text-[#0E1E41] block leading-none">ASHNO <span class="text-[#C0809A]">2027</span></span>
+                            <span class="text-[11px] font-medium text-[#4E6690] uppercase tracking-wider">Scientific Congress Portal</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 gap-1 text-sm font-medium text-slate-600">
+                        <li><a href="#milestones" class="hover:text-[#0E1E41] hover:bg-[#EEF2F8] rounded-lg">Key Milestones</a></li>
+                        <li><a href="#submission-rules" class="hover:text-[#0E1E41] hover:bg-[#EEF2F8] rounded-lg">Submission Rules</a></li>
+                        <li><a href="#topics" class="hover:text-[#0E1E41] hover:bg-[#EEF2F8] rounded-lg">Topics (32)</a></li>
+                        <li><a href="#ai-policy" class="hover:text-[#0E1E41] hover:bg-[#EEF2F8] rounded-lg">AI Policy</a></li>
+                        <li><a href="#presentation-guidelines" class="hover:text-[#0E1E41] hover:bg-[#EEF2F8] rounded-lg">Presentation Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end gap-2">
+                    <a href="#contact" class="btn btn-sm sm:btn-md bg-[#0E1E41] hover:bg-[#4E6690] text-white border-none rounded-xl shadow-sm normal-case font-semibold transition-colors">
+                        <i class="fa-solid fa-envelope text-[#C0809A]"></i>
+                        <span class="hidden sm:inline">Contact Secretariat</span>
+                        <span class="sm:hidden">Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    function openModal() {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      document.body.classList.add('overflow-hidden');
-    }
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-[#09142C] via-[#0E1E41] to-[#4E6690] text-white py-14 sm:py-20">
+        <!-- Decorative CSS Grid Pattern & Subtle Mauve Glow -->
+        <div class="absolute inset-0 hero-grid-bg pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#C0809A]/20 blur-3xl pointer-events-none"></div>
 
-    function closeModal() {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.classList.remove('overflow-hidden');
-    }
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C0809A]/20 border border-[#C0809A]/40 text-[#F7DCE6] text-xs sm:text-sm font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-[#C0809A] animate-pulse"></span>
+                    Official Call for Abstracts • Congress: August 5th – 8th, 2027
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-5">
+                    ASHNO 2027 Abstract Submission Rules & Guidelines
+                </h1>
+                <p class="text-base sm:text-lg text-slate-200 leading-relaxed mb-8">
+                    Comprehensive official guidelines, critical deadlines, scientific topic categories, artificial intelligence compliance policies, and presentation specifications for authors submitting to the 2027 Annual Meeting.
+                </p>
+                
+                <!-- Key Quick Stats Strip -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2">
+                    <div class="bg-[#0E1E41]/60 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+                        <div class="text-[#C0809A] text-xs font-semibold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-door-open"></i> Opens
+                        </div>
+                        <div class="text-sm sm:text-base font-bold">Dec 2, 2026</div>
+                    </div>
+                    <div class="bg-[#0E1E41]/60 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+                        <div class="text-[#E3AFC4] text-xs font-semibold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-hourglass-end"></i> Closes
+                        </div>
+                        <div class="text-sm sm:text-base font-bold">Mar 31, 2027</div>
+                    </div>
+                    <div class="bg-[#0E1E41]/60 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+                        <div class="text-[#B8CAE6] text-xs font-semibold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-align-left"></i> Word Limit
+                        </div>
+                        <div class="text-sm sm:text-base font-bold">≤ 500 Words</div>
+                    </div>
+                    <div class="bg-[#0E1E41]/60 backdrop-blur-sm border border-white/15 rounded-2xl p-4">
+                        <div class="text-[#C0809A] text-xs font-semibold uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                            <i class="fa-regular fa-image"></i> Image Specs
+                        </div>
+                        <div class="text-sm sm:text-base font-bold">≤ 1MB / 900×900px</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    openBtn.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    secondaryCloseBtn.addEventListener('click', closeModal);
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
+        <!-- SECTION 1: KEY MILESTONES & TIMELINE -->
+        <section id="milestones" class="scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                <div>
+                    <div class="flex items-center gap-2 text-[#4E6690] font-bold text-sm uppercase tracking-wider mb-1">
+                        <i class="fa-solid fa-calendar-check text-[#C0809A]"></i>
+                        Important Dates & Schedule
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0E1E41]">Submission Milestones</h2>
+                </div>
+            </div>
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
-  </script>
-</body>
-</html>
+            <!-- Responsive Milestone Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Milestone 1 -->
+                <div class="card bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#4E6690]"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#EEF2F8] text-[#0E1E41] border-[#4E6690]/25 font-bold text-xs">Phase 01</span>
+                        <i class="fa-solid fa-door-open text-lg text-[#4E6690]"></i>
+                    </div>
+                    <h3 class="font-bold text-[#0E1E41] text-base mb-2">Abstract submission opens</h3>
+                    <p class="text-sm font-extrabold text-[#4E6690] mt-auto">December, 2nd 2026</p>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="card bg-white border border-[#C0809A]/50 shadow-sm hover:shadow-md transition-all rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#C0809A]"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#FAF2F5] text-[#8A4A64] border-[#C0809A]/40 font-bold text-xs">Deadline</span>
+                        <i class="fa-solid fa-lock text-lg text-[#C0809A]"></i>
+                    </div>
+                    <h3 class="font-bold text-[#0E1E41] text-base mb-2">Abstract submission closes</h3>
+                    <p class="text-sm font-extrabold text-[#A6647F] mt-auto">March, 31th 2027</p>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="card bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#0E1E41]"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#EEF2F8] text-[#0E1E41] border-[#0E1E41]/20 font-bold text-xs">Notification</span>
+                        <i class="fa-solid fa-envelope-circle-check text-lg text-[#0E1E41]"></i>
+                    </div>
+                    <h3 class="font-bold text-[#0E1E41] text-base mb-2">Acceptance letters sent</h3>
+                    <p class="text-sm font-extrabold text-[#0E1E41] mt-auto">May, 7th 2027</p>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="card bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#4E6690]"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#EEF2F8] text-[#4E6690] border-[#4E6690]/25 font-bold text-xs">Registration</span>
+                        <i class="fa-solid fa-credit-card text-lg text-[#4E6690]"></i>
+                    </div>
+                    <h3 class="font-bold text-[#0E1E41] text-base mb-2">Presenting author registration and full payment</h3>
+                    <p class="text-xs font-bold text-[#4E6690] leading-snug mt-auto">Within 10 working days of the acceptance letter, and no later than before May, 31th 2027</p>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div class="card bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#C0809A]"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#FAF2F5] text-[#8A4A64] border-[#C0809A]/35 font-bold text-xs">Final Changes</span>
+                        <i class="fa-solid fa-user-pen text-lg text-[#C0809A]"></i>
+                    </div>
+                    <h3 class="font-bold text-[#0E1E41] text-base mb-2">Last day to change presenting author or withdraw</h3>
+                    <p class="text-sm font-extrabold text-[#A6647F] mt-auto">June, 30th 2027</p>
+                </div>
+
+                <!-- Milestone 6 -->
+                <div class="card bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#4E6690]"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#EEF2F8] text-[#0E1E41] border-[#4E6690]/25 font-bold text-xs">Media Upload</span>
+                        <i class="fa-solid fa-cloud-arrow-up text-lg text-[#4E6690]"></i>
+                    </div>
+                    <h3 class="font-bold text-[#0E1E41] text-base mb-2">Presentation or ePoster upload</h3>
+                    <p class="text-sm font-extrabold text-[#4E6690] mt-auto">July, 26th 2027</p>
+                </div>
+
+                <!-- Milestone 7 (Highlighted Congress Dates) -->
+                <div class="card bg-gradient-to-br from-[#0E1E41] via-[#172E5E] to-[#4E6690] text-white shadow-md rounded-2xl p-5 md:col-span-2 relative overflow-hidden border border-[#C0809A]/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="badge bg-[#C0809A] text-white border-none font-extrabold text-xs">Congress dates</span>
+                        <i class="fa-solid fa-award text-2xl text-[#C0809A]"></i>
+                    </div>
+                    <p class="text-xl sm:text-2xl font-extrabold text-[#F2C6D7]">August, 5th - 8th 2027</p>
+                    <button class="btn hover:bg-[#C0809A] text-white rounded-lg mt-4 btn-sm btn-outline"><i class="fa-solid fa-upload mr-2"></i> Submit your Abstract</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SUBMISSION RULES ASHNO 2027 -->
+        <section id="submission-rules" class="scroll-mt-24">
+            <div class="mb-8">
+                <div class="flex items-center gap-2 text-[#4E6690] font-bold text-sm uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-file-signature text-[#C0809A]"></i>
+                    Compliance & Formatting
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0E1E41]">Submission Rules ASHNO 2027</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left Column: Technical & Formatting Specs -->
+                <div class="space-y-4">
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                        <h3 class="font-bold text-[#0E1E41] text-lg mb-4 flex items-center gap-2.5">
+                            <i class="fa-solid fa-sliders text-[#C0809A]"></i>
+                            Technical Specifications
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                <div class="w-9 h-9 rounded-lg bg-[#0E1E41] text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold uppercase text-[#4E6690]">Word Limit</div>
+                                    <div class="text-sm font-bold text-[#0E1E41]">500 words or less</div>
+                                    <p class="text-xs text-slate-600 mt-0.5">Abstract submissions are limited to 500 words or less.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                <div class="w-9 h-9 rounded-lg bg-[#4E6690] text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-image"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold uppercase text-[#4E6690]">Image Allowance</div>
+                                    <div class="text-sm font-bold text-[#0E1E41]">Max 1MB • Max 900×900 px</div>
+                                    <p class="text-xs text-slate-600 mt-0.5">Images are allowed with abstract submissions. Images must be no larger than 1MB in file size, and no larger than 900x900 pixels.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                <div class="w-9 h-9 rounded-lg bg-[#C0809A] text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-eye-slash"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold uppercase text-[#4E6690]">Blind Review Requirement</div>
+                                    <div class="text-sm font-bold text-[#0E1E41]">No Author / Institution Identifiers</div>
+                                    <p class="text-xs text-slate-600 mt-0.5">No reference to the authors or the institution should appear within the body of the abstract or in the abstract title.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                <div class="w-9 h-9 rounded-lg bg-[#0E1E41] text-[#C0809A] flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-flask-vial"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold uppercase text-[#4E6690]">Eligible Study Types</div>
+                                    <div class="text-sm font-bold text-[#0E1E41]">Trials in Progress & Case Reports</div>
+                                    <p class="text-xs text-slate-600 mt-0.5">Trials in Progress and Case Reports may be submitted.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right 2 Columns: Detailed Rules & Critical Embargo Warning -->
+                <div class="lg:col-span-2 space-y-5">
+                    <!-- Selection & Program Publication Card -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-[#0E1E41] text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-person-chalkboard text-[#C0809A]"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#0E1E41] text-lg mb-2">Selection, Format & Final Program</h3>
+                                <p class="text-sm text-slate-700 leading-relaxed">
+                                    The program committee will be responsible for selecting oral and poster presentations. Oral presentations will be presented throughout the main scientific session and a short video may be incorporated into an oral podium presentation. Accepted abstracts will be published in the Final Program.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Encore Abstracts Card -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-[#4E6690] text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#0E1E41] text-lg mb-2">No Previously Presented Submissions (Encore Abstracts)</h3>
+                                <p class="text-sm text-slate-700 leading-relaxed">
+                                    The abstract submitted must present original work that has not and will not be presented prior to the ASHNO 2027. Presentations at investigators' own institution, or at local meetings are exempt from this rule.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Critical Embargo & Penalty Alert Card -->
+                    <div class="bg-[#FAF2F5] rounded-2xl border-2 border-[#C0809A] p-6 shadow-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-[#0E1E41] text-[#C0809A] flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center gap-2 mb-2">
+                                    <h3 class="font-extrabold text-[#0E1E41] text-lg">No Previously Published Submissions / No Submissions Under Consideration For Publication</h3>
+                                    <span class="badge bg-[#C0809A] text-white border-none font-bold text-xs gap-1">
+                                        <i class="fa-solid fa-gavel text-[10px]"></i> Strict Penalty
+                                    </span>
+                                </div>
+                                <p class="text-sm text-slate-800 leading-relaxed mb-3">
+                                    The abstract submitted must present original work that has not and will not be published or presented prior to the ASHNO 2027, and is not currently under review for publication. Manuscripts may not be submitted to any journals for consideration until after ASHNO abstract acceptance notification.
+                                </p>
+                                <div class="p-3.5 rounded-xl bg-white border border-[#C0809A]/60 text-xs sm:text-sm font-semibold text-[#0E1E41]">
+                                    If the manuscript has been submitted to any journal prior to ASHNO abstract acceptance notifications, the Abstract Submitter, Presenter and Senior Author will forfeit the privilege to submit, present, or be listed as an author on abstracts for the <span class="underline font-extrabold text-[#A6647F]">2028 and 2029 ASHNO Annual Meetings</span>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Editing & Post-Acceptance Data Policy Card -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-[#C0809A] text-white flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#0E1E41] text-lg mb-2">Editing & Post-Submission Updates</h3>
+                                <p class="text-sm text-slate-700 leading-relaxed">
+                                    Abstracts can be edited until the submission site closes. After the submission site closes and the abstracts go into review, the content of the abstracts may not be edited in any way. Please make sure to proof read and double check your abstracts before submission. In addition, ASHNO cannot update the content/text of your abstract to include new/updated data after acceptance notifications, although you will be allowed to include these updated findings in your actual presentation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SCIENTIFIC TOPICS (ALL 32 TOPICS WITH INTERACTIVE FILTER) -->
+        <section id="topics" class="scroll-mt-24">
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+              <p class="text-sm text-slate-600 mt-1">Authors are asked to choose the topic that best matches the content of their abstract.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Artificial Intelligence</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Behavioral Health</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Cancer Biology</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Cancer Engineering / Technology</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Care Delivery Innovation</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Education / Care Delivery</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Endocrine Surgery</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Functional Outcomes / Quality</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Hypopharynx / Larynx</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Imaging and Screening</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Immunotherapy / Systemic Therapy</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Nasopharynx / Paranasal Sinus / Skull Base</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Oral Cavity</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Oropharynx / HPV Related Disease</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Precision Medicine</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Radiation / Adjuvant Treatment</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Reconstruction / Microvascular Surgery</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Salivary Gland</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Skin Cancer</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Survivorship</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Translational Research/Science</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Artificial Intelligence in Head and Neck Oncology</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Molecular Biology &amp; Tumor-immune Interplay</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Biomarkers, Novel Technologies &amp; Liquid Biopsy</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Immunotherapy &amp; Clinical Trials</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Radiotherapy &amp; Radiomics</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>HPV-associated Head and Neck Cancer</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Surgical Innovations</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Big Data Analysis and Multi-Omics Studies</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Premalignant Disease and Carcinogenesis</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Robotic</div>
+                  <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#f5f7fa] border border-base-300/70 text-xs md:text-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-[#C0809A] shrink-0"></span>Endoscopic surgery</div>
+              </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ASHNO AI POLICY AND GUIDELINES -->
+        <section id="ai-policy" class="scroll-mt-24">
+            <div class="mb-8">
+                <div class="flex items-center gap-2 text-[#4E6690] font-bold text-sm uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-robot text-[#C0809A]"></i>
+                    Responsible Innovation & Ethics
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0E1E41]">ASHNO AI Policy and Guidelines</h2>
+                <p class="text-sm text-slate-600 mt-1">Mandatory standards governing the use of Artificial Intelligence tools in scientific writing and abstract preparation.</p>
+            </div>
+
+            <!-- Interactive DaisyUI Tabs for AI Policy Pillars -->
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                <!-- Tab Content Panels -->
+                <div class="p-6 sm:p-8 flex flex-col gap-6">
+                    <!-- Panel 1: Integrity -->
+                    <div id="ai-panel-integrity" class="ai-tab-panel space-y-4">
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+                            <div class="w-10 h-10 rounded-xl bg-[#0E1E41] text-[#C0809A] flex items-center justify-center">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-extrabold text-[#0E1E41]">Integrity</h3>
+                                <p class="text-xs text-[#4E6690]">Human accountability, authorship, and plagiarism prevention</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                            <li class="flex items-start gap-3 p-3.5 rounded-xl bg-[#F5F7FA]">
+                                <i class="fa-solid fa-circle-check text-[#4E6690] text-base shrink-0 mt-0.5"></i>
+                                <span>Ensuring data and research integrity should be a central consideration when using AI-based tools for scientific writing intended for publication.</span>
+                            </li>
+                            <li class="flex items-start gap-3 p-3.5 rounded-xl bg-[#F5F7FA]">
+                                <i class="fa-solid fa-circle-check text-[#4E6690] text-base shrink-0 mt-0.5"></i>
+                                <span>Authors of a manuscript are responsible for the accuracy, integrity, and originality of the work, and as such, <strong class="text-[#0E1E41]">chatbots or other AI-assisted technologies should not be listed as authors.</strong></span>
+                            </li>
+                            <li class="flex items-start gap-3 p-3.5 rounded-xl bg-[#F5F7FA]">
+                                <i class="fa-solid fa-circle-check text-[#4E6690] text-base shrink-0 mt-0.5"></i>
+                                <span>Authors should carefully review and edit all materials produced through the use of AI, to prevent the submission of incorrect, incomplete, or biased content.</span>
+                            </li>
+                            <li class="flex items-start gap-3 p-3.5 rounded-xl bg-[#F5F7FA]">
+                                <i class="fa-solid fa-circle-check text-[#4E6690] text-base shrink-0 mt-0.5"></i>
+                                <span>Authors should be able to assert that there is no plagiarism of text or images in materials produced by AI. Authors must ensure that all quoted material is properly attributed, including full citations.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Panel 2: Transparency -->
+                    <div id="ai-panel-transparency" class="ai-tab-panel space-y-5">
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+                            <div class="w-10 h-10 rounded-xl bg-[#4E6690] text-white flex items-center justify-center">
+                                <i class="fa-solid fa-eye text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-extrabold text-[#0E1E41]">Transparency</h3>
+                                <p class="text-xs text-[#4E6690]">Mandatory disclosure requirements at the time of submission</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-[#EEF2F8] border border-[#4E6690]/25 text-sm text-[#0E1E41]">
+                            <p class="font-bold mb-1">Use of AI in abstract submission should be disclosed and detailed in its method of use</p>
+                            <p class="text-slate-700">Authors must disclose at the time of submission as to whether AI-assisted technologies (such as large language models, or generative image models) were used to produce the submitted work. If so, the submitted work should include a description of the technologies used and what was produced.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-bold text-[#0E1E41] mb-3">Examples of what to include in the brief description:</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                    <i class="fa-solid fa-microchip text-[#C0809A] shrink-0"></i>
+                                    <span>Name of the AI tool or software platform (e.g., ChatGPT, Claude, Gemini)</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                    <i class="fa-solid fa-code-branch text-[#4E6690] shrink-0"></i>
+                                    <span>Version/extension numbers (if available)</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                    <i class="fa-solid fa-building text-[#C0809A] shrink-0"></i>
+                                    <span>Developer/manufacturer (e.g., OpenAI, Google, Anthropic)</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                    <i class="fa-regular fa-calendar text-[#4E6690] shrink-0"></i>
+                                    <span>Date(s) of use</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                    <i class="fa-solid fa-list-check text-[#C0809A] shrink-0"></i>
+                                    <span>Scope of use (e.g., drafting, statistical analysis, image editing)</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                                    <i class="fa-solid fa-user-check text-[#4E6690] shrink-0"></i>
+                                    <span>Confirmation that the author(s) take responsibility for the integrity of the content generated</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert bg-[#FAF2F5] border border-[#C0809A]/40 rounded-xl text-xs sm:text-sm text-[#0E1E41]">
+                            <i class="fa-solid fa-circle-info text-[#C0809A] text-lg shrink-0"></i>
+                            <span><strong>Note:</strong> This guidance does not apply to basic tools for checking grammar, spelling, references, and similar.</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3: Reproducibility -->
+                    <div id="ai-panel-reproducibility" class="ai-tab-panel  space-y-4">
+                        <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+                            <div class="w-10 h-10 rounded-xl bg-[#4E6690] text-white flex items-center justify-center">
+                                <i class="fa-solid fa-arrows-rotate text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-extrabold text-[#0E1E41]">Reproducibility</h3>
+                                <p class="text-xs text-[#4E6690]">Workflow documentation and configuration version control</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#EEF2F8] border border-[#4E6690]/25 font-bold text-sm text-[#0E1E41]">
+                            AI output in research or abstract submission should be reproducible
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                            <li class="flex items-start gap-3 p-3.5 rounded-xl bg-[#F5F7FA]">
+                                <i class="fa-solid fa-terminal text-[#4E6690] text-base shrink-0 mt-0.5"></i>
+                                <span>AI-assisted abstracts should provide the AI workflows including prompts, code, datasets, and model parameters, when possible.</span>
+                            </li>
+                            <li class="flex items-start gap-3 p-3.5 rounded-xl bg-[#F5F7FA]">
+                                <i class="fa-solid fa-code-commit text-[#C0809A] text-base shrink-0 mt-0.5"></i>
+                                <span>Authors should use version control and maintain detailed records of AI configurations used for submissions.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Panel 4: Prohibited Practices -->
+                    <div id="ai-panel-prohibited" class="ai-tab-panel  space-y-4">
+                        <div class="flex items-center gap-3 pb-3 border-b border-[#C0809A]/30">
+                            <div class="w-10 h-10 rounded-xl bg-[#C0809A] text-white flex items-center justify-center">
+                                <i class="fa-solid fa-ban text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-extrabold text-[#0E1E41]">Prohibited Practices</h3>
+                                <p class="text-xs text-[#8A4A64]">The following uses of AI are prohibited in abstract submission</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                            <div class="flex items-start gap-3 p-4 rounded-xl bg-[#FAF2F5] border border-[#C0809A]/50 text-[#0E1E41]">
+                                <i class="fa-solid fa-circle-xmark text-[#C0809A] text-base shrink-0 mt-0.5"></i>
+                                <span class="font-medium">De novo generation of abstract material using generative AI platforms.</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 rounded-xl bg-[#FAF2F5] border border-[#C0809A]/50 text-[#0E1E41]">
+                                <i class="fa-solid fa-circle-xmark text-[#C0809A] text-base shrink-0 mt-0.5"></i>
+                                <span class="font-medium">AI-generated hypotheses or conclusions without human oversight.</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 rounded-xl bg-[#FAF2F5] border border-[#C0809A]/50 text-[#0E1E41]">
+                                <i class="fa-solid fa-circle-xmark text-[#C0809A] text-base shrink-0 mt-0.5"></i>
+                                <span class="font-medium">The use of AI to manipulate or falsify data.</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 rounded-xl bg-[#FAF2F5] border border-[#C0809A]/50 text-[#0E1E41]">
+                                <i class="fa-solid fa-circle-xmark text-[#C0809A] text-base shrink-0 mt-0.5"></i>
+                                <span class="font-medium">The use of AI generated code for data analysis without secondary validation.</span>
+                            </div>
+                            <div class="flex items-start gap-3 p-4 rounded-xl bg-[#FAF2F5] border border-[#C0809A]/50 text-[#0E1E41] md:col-span-2">
+                                <i class="fa-solid fa-circle-xmark text-[#C0809A] text-base shrink-0 mt-0.5"></i>
+                                <span class="font-medium">Citation of AI-generated material as a primary source is not acceptable.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: ADDITIONAL REQUIREMENTS FOR ABSTRACT SUBMISSION & PRESENTATION GUIDELINES -->
+        <section id="presentation-guidelines" class="scroll-mt-24">
+            <div class="mb-8">
+                <h2 class="text-lg sm:text-xl font-extrabold text-[#0E1E41]">Additional Requirements for Abstract Submission & Presentation Guidelines</h2>
+                <p class="text-sm text-slate-600 mt-1">
+                    To ensure consistency and facilitate the preparation of accepted abstracts for presentation, the Scientific Committee is requested to provide the following additional guidelines:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Card 1: Verbal/Podium Presentation Guidelines -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3.5 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-[#0E1E41] text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-microphone-lines text-xl text-[#C0809A]"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-[#0E1E41]">1. Verbal/Podium Presentation Guidelines</h3>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-5">
+                        Detailed instructions for authors whose abstracts are accepted for oral or podium presentations, including:
+                    </p>
+                    <div class="space-y-3 flex-grow">
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-file-powerpoint text-[#C0809A]"></i>
+                                Presentation Format
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Required file format (e.g., PowerPoint/PPT or PPTX).</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-table-columns text-[#4E6690]"></i>
+                                Slide Format
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Recommended slide structure and any specific formatting requirements.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-expand text-[#C0809A]"></i>
+                                Slide Aspect Ratio
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Required presentation dimensions (e.g., 16:9 widescreen).</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-regular fa-clock text-[#4E6690]"></i>
+                                Presentation Duration
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Allocated presentation time, including the Q&A session, if applicable.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-upload text-[#C0809A]"></i>
+                                Submission Requirements
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Instructions and deadlines for submitting presentation slides prior to the conference (Deadline: <strong class="text-[#0E1E41]">July, 26th 2027</strong>).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: E-Poster Presentation Guidelines -->
+                <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col">
+                    <div class="flex items-center gap-3.5 mb-5 pb-4 border-b border-slate-100">
+                        <div class="w-12 h-12 rounded-2xl bg-[#4E6690] text-white flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-tablet-screen-button text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-extrabold text-[#0E1E41]">2. E-Poster Presentation Guidelines</h3>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-5">
+                        Official guidelines for authors whose abstracts are accepted for e-poster presentations, including:
+                    </p>
+                    <div class="space-y-3 flex-grow">
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-file-pdf text-[#C0809A]"></i>
+                                File Format
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Required file format (e.g., PDF, JPEG, or other specified formats).</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-ruler-combined text-[#4E6690]"></i>
+                                Poster Dimensions
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Required poster size and orientation (portrait or landscape).</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-crop-simple text-[#C0809A]"></i>
+                                Resolution and Layout
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Recommended resolution, font size, and layout specifications to ensure readability on digital displays.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-object-group text-[#4E6690]"></i>
+                                E-Poster Template
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">An official e-poster template to be provided for authors to ensure a consistent presentation format.</p>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-200/70">
+                            <div class="font-bold text-[#0E1E41] text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-cloud-arrow-up text-[#C0809A]"></i>
+                                Submission Requirements
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1">Instructions, submission platform, and deadline for uploading the final e-poster (Deadline: <strong class="text-[#0E1E41]">July, 26th 2027</strong>).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advance Availability Notice Banner -->
+            <div class="mt-6 bg-[#EEF2F8] border border-[#4E6690]/30 rounded-2xl p-4 sm:p-5 flex items-center gap-3 text-[#0E1E41] text-sm">
+                <i class="fa-solid fa-circle-info text-lg text-[#C0809A] shrink-0"></i>
+                <p class="font-medium">
+                    All presentation guidelines and templates should be made available to accepted authors in advance to allow sufficient time for preparation and submission.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-[#09142C] text-slate-300 border-t border-[#4E6690]/30 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-gradient-to-r from-[#0E1E41] via-[#172E5E] to-[#4E6690] border border-[#C0809A]/35 rounded-3xl p-6 sm:p-8 mb-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div class="space-y-2 max-w-2xl">
+                    <p class="text-sm text-slate-200 leading-relaxed">
+                        Please contact <span class="text-[#F2C6D7] font-semibold">ashno2027@pharma-pro.com</span> with any questions regarding ASHNO Policy on Owner/Employee of Ineligible Companies or abstract submission compliance.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
+                    <a href="mailto:ashno2027@pharma-pro.com" class="btn bg-white hover:bg-[#EEF2F8] text-[#0E1E41] border-none rounded-xl font-bold normal-case flex-1 sm:flex-initial">
+                        <i class="fa-solid fa-paper-plane text-[#4E6690]"></i>
+                        <span>ashno2027@pharma-pro.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 pt-4 border-t border-white/10">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-[#C0809A]/20 border border-[#C0809A]/40 flex items-center justify-center text-[#C0809A]">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <span class="font-bold text-white">ASHNO 2027 Annual Meeting</span>
+                    <span>•</span>
+                    <span>August 5th – 8th, 2027</span>
+                </div>
+                <div>
+                    Official Abstract Submission Rules and Guidelines Document
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden textarea for reliable iframe clipboard copying -->
+    <textarea id="clipboardHelper" class="sr-only" aria-hidden="true"></textarea>
+
+    <script>
+// ... existing code ... -->
+            filtered.forEach(({ topic, index }) => {
+                const card = document.createElement('button');
+                card.type = 'button';
+                card.onclick = () => copyTextWithToast(topic, `Copied topic: "${topic}"`);
+                card.className = 'group text-left p-3.5 rounded-2xl bg-[#F5F7FA] hover:bg-[#FAF2F5] border border-slate-200/80 hover:border-[#C0809A] transition-all flex items-start justify-between gap-3 focus:outline-none focus:ring-2 focus:ring-[#4E6690]';
+                
+                const formattedIndex = String(index).padStart(2, '0');
+                card.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <span class="text-xs font-extrabold px-2 py-1 rounded-lg bg-white border border-slate-200 text-[#0E1E41] group-hover:bg-[#0E1E41] group-hover:text-white group-hover:border-[#0E1E41] transition-colors shrink-0">
+                            ${formattedIndex}
+                        </span>
+                        <span class="text-sm font-semibold text-slate-800 group-hover:text-[#0E1E41] leading-snug pt-0.5">
+                            ${topic}
+                        </span>
+                    </div>
+                    <i class="fa-regular fa-copy text-xs text-slate-300 group-hover:text-[#C0809A] transition-colors pt-1 shrink-0"></i>
+                `;
+                topicsGrid.appendChild(card);
+            });
+        }
+// ... existing code ... -->
+        // AI Policy Tabs Switcher
+        const aiTabBtns = document.querySelectorAll('.ai-tab-btn');
+        const aiTabPanels = document.querySelectorAll('.ai-tab-panel');
+
+        aiTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-ai-tab');
+
+                // Reset all tab buttons
+                aiTabBtns.forEach(b => {
+                    b.classList.remove('bg-[#0E1E41]', 'bg-[#C0809A]', 'text-white', 'shadow-sm', 'font-bold');
+                    b.classList.add('bg-transparent', 'font-semibold');
+                    if (b.getAttribute('data-ai-tab') === 'prohibited') {
+                        b.classList.add('text-[#8A4A64]');
+                    } else {
+                        b.classList.add('text-[#0E1E41]');
+                    }
+                });
+
+                // Activate clicked tab button
+                btn.classList.remove('bg-transparent', 'text-[#0E1E41]', 'text-[#8A4A64]', 'font-semibold');
+                btn.classList.add('text-white', 'shadow-sm', 'font-bold');
+                if (targetTab === 'prohibited') {
+                    btn.classList.add('bg-[#C0809A]');
+                } else {
+                    btn.classList.add('bg-[#0E1E41]');
+                }
+
+                // Show matching panel
+                aiTabPanels.forEach(panel => {
+                    if (panel.id === `ai-panel-${targetTab}`) {
+                        panel.classList.remove('hidden');
+                    } else {
+                        panel.classList.add('hidden');
+                    }
+                });
+            });
+        });
+// ... existing code ... -->

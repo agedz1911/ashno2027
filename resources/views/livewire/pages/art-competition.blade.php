@@ -74,12 +74,17 @@
                     </div>
 
                     <!-- CTA -->
-                    <div class="pt-4">
+                    <div class="pt-4 flex flex-wrap gap-4">
                         <a href="#faq"
                             class="px-6 py-3 bg-gradient-to-r from-[#C0809A] to-[#f6c945] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                            Learn More & Submit
+                            Learn More
+                        </a>
+                        <a href="http://expo.virconex-id.com/eposter/ashno2027/art_competition/index.php"
+                            class="px-6 py-3 bg-gradient-to-r from-[#C0809A] to-[#f6c945] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                            Submit Artwork
                         </a>
                     </div>
+
                 </div>
             </div>
         </div>
