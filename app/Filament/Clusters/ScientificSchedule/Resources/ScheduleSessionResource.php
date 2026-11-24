@@ -6,6 +6,7 @@ use App\Filament\Clusters\ScientificSchedule;
 use App\Filament\Clusters\ScientificSchedule\Resources\ScheduleSessionResource\Pages;
 use App\Filament\Clusters\ScientificSchedule\Resources\ScheduleSessionResource\RelationManagers;
 use App\Models\Faculty;
+use App\Models\RoomSchedule;
 use App\Models\ScheduleSession;
 use Filament\Forms;
 use Filament\Forms\Components\ColorPicker;
@@ -48,11 +49,11 @@ class ScheduleSessionResource extends Resource
                     ->native(false),
                 TextInput::make('time'),
                 Select::make('room')
-                    ->options([
-                        'Room 1' => 'Room 1',
-                        'Room 2' => 'Room 2',
-                        'Room 3' => 'Room 3',
-                    ]),
+                    ->options(
+                        RoomSchedule::where('is_active', true)
+                            ->pluck('room', 'room')
+                            ->toArray()
+                    ),
                 TextInput::make('moderator'),
                 Select::make('faculty_id')
                     ->label('Faculty')

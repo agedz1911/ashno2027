@@ -59,8 +59,8 @@
                         </li>
 
                         <li class=" rounded-md p-2 w-10 bg-[#C0809A] hover:bg-[#0E1E41] tooltip-bottom tooltip"
-                            data-tip="@">
-                            <a href="javascript:void(0)" class="">
+                            data-tip="@ashno.2027">
+                            <a href="https://www.instagram.com/ashno.2027/" class="">
                                 <i class="fa fa-instagram text-xl"></i>
                             </a>
                         </li>
